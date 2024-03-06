@@ -1,0 +1,50 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <Platforms>AnyCPU;x64</Platforms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="hps_wpf_sandbox_config.xml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="..\HOOPS_Visualize_2023_SP2\include\hoops_license.cs" Link="hoops_license.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="hps_wpf_sandbox_config.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+    <PackageReference Include="Microsoft.Windows.Compatibility" Version="5.0.0" />
+    <PackageReference Include="RibbonControlsLibrary" Version="4.0.0" />
+    <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\FASTInterop\FASTInputDll\FASTInputDll.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="hps_cs_core">
+      <HintPath>..\HOOPS_Visualize_2023_SP2\bin\win64_v142d\hps_cs_core.dll</HintPath>
+    </Reference>
+    <Reference Include="hps_cs_sprk">
+      <HintPath>..\HOOPS_Visualize_2023_SP2\bin\win64_v142d\hps_cs_sprk.dll</HintPath>
+    </Reference>
+    <Reference Include="hps_cs_sprk_d3dimage">
+      <HintPath>..\HOOPS_Visualize_2023_SP2\bin\win64_v142d\hps_cs_sprk_d3dimage.dll</HintPath>
+    </Reference>
+    <Reference Include="hps_cs_sprk_ops">
+      <HintPath>..\HOOPS_Visualize_2023_SP2\bin\win64_v142d\hps_cs_sprk_ops.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<wpf_sandbox>
+
+  <directories>
+    <samples>../../samples/data</samples>
+    <materials>../../samples/data/materials</materials>
+    <fonts>../../samples/fonts</fonts>
+  </directories>
+
+</wpf_sandbox>
