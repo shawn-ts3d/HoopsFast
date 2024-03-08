@@ -1,0 +1,63 @@
+﻿<Window x:Class="HoopsFast.Fst.Fst_Output"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HoopsFast.Fst"
+        mc:Ignorable="d"
+        Title="OUTPUT" Height="300" Width="1200">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="10*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Label x:Name="lblFstSumPrint" Grid.Row="0" Grid.Column="0"/>
+        <CheckBox x:Name="chkFstSumPrint_value" Grid.Row="0" Grid.Column="1"/>
+        <Label x:Name="lblFstSumPrint_description" Grid.Row="0" Grid.Column="2"/>
+
+        <Label x:Name="lblFstSttsTime" Grid.Row="1" Grid.Column="0"/>
+        <TextBox x:Name="txtFstSttsTime_value" Grid.Row="1" Grid.Column="1"/>
+        <Label x:Name="lblFstSttsTime_description" Grid.Row="1" Grid.Column="2"/>
+
+        <Label x:Name="lblFstChkptTime" Grid.Row="2" Grid.Column="0"/>
+        <TextBox x:Name="txtFstChkptTime_value" Grid.Row="2" Grid.Column="1"/>
+        <Label x:Name="lblFstChkptTime_description" Grid.Row="2" Grid.Column="2"/>
+
+        <Label x:Name="lblFstDT_Out" Grid.Row="3" Grid.Column="0"/>
+        <TextBox x:Name="txtFstDT_Out_value" Grid.Row="3" Grid.Column="1"/>
+        <Label x:Name="lblFstDT_Out_description" Grid.Row="3" Grid.Column="2"/>
+
+        <Label x:Name="lblFstTStart" Grid.Row="4" Grid.Column="0"/>
+        <TextBox x:Name="txtFstTStart_value" Grid.Row="4" Grid.Column="1"/>
+        <Label x:Name="lblFstTStart_description" Grid.Row="4" Grid.Column="2"/>
+
+        <Label x:Name="lblFstOutFileFmt" Grid.Row="5" Grid.Column="0"/>
+        <ComboBox x:Name="cboFstOutFileFmt_value" Grid.Row="5" Grid.Column="1"/>
+        <Label x:Name="lblFstOutFileFmt_description" Grid.Row="5" Grid.Column="2"/>
+
+        <Label x:Name="lblFstTabDelim" Grid.Row="6" Grid.Column="0"/>
+        <CheckBox x:Name="chkFstTabDelim_value" Grid.Row="6" Grid.Column="1"/>
+        <Label x:Name="lblFstTabDelim_description" Grid.Row="6" Grid.Column="2"/>
+
+        <Label x:Name="lblFstOutFmt" Grid.Row="7" Grid.Column="0"/>
+        <TextBox x:Name="txtFstOutFmt_value" Grid.Row="7" Grid.Column="1"/>
+        <Label x:Name="lblFstOutFmt_description" Grid.Row="7" Grid.Column="2"/>
+
+        <Button x:Name="btnOK" Content="OK" Grid.Row="8" Grid.Column="0" Margin="10,5,10,5" Click="btnOK_Click" MaxWidth="100"/>
+        <Button x:Name="btnCancel" Content="Cancel" Grid.Row="8" Grid.Column="1" Margin="10,5,10,5" Click="btnCancel_Click" MaxWidth="100"/>
+
+    </Grid>
+</Window>

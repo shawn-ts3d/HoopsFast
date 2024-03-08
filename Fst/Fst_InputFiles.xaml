@@ -1,0 +1,122 @@
+﻿<Window x:Class="HoopsFast.Fst.Fst_InputFiles"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HoopsFast.Fst"
+        mc:Ignorable="d"
+        Title="INPUT FILES" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="10*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Label x:Name="lblFstEDFile" Grid.Row="0" Grid.Column="0"/>
+        <TextBox x:Name="txtFstEDFile_value" Grid.Row="0" Grid.Column="1" IsReadOnly="True">
+            <TextBox.Background>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ActiveBorderColorKey}}"/>
+            </TextBox.Background>
+        </TextBox>
+        <Label x:Name="lblFstEDFile_description" Grid.Row="0" Grid.Column="2"/>
+
+        <Label x:Name="lblFstBDBldFile1" Grid.Row="1" Grid.Column="0"/>
+        <TextBox x:Name="txtFstBDBldFile1_value" Grid.Row="1" Grid.Column="1" IsReadOnly="True">
+            <TextBox.Background>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ActiveBorderColorKey}}"/>
+            </TextBox.Background>
+        </TextBox>
+        <Label x:Name="lblFstBDBldFile1_description" Grid.Row="1" Grid.Column="2"/>
+        
+        <Label x:Name="lblFstBDBldFile2" Grid.Row="2" Grid.Column="0"/>
+        <TextBox x:Name="txtFstBDBldFile2_value" Grid.Row="2" Grid.Column="1" IsReadOnly="True">
+            <TextBox.Background>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ActiveBorderColorKey}}"/>
+            </TextBox.Background>
+        </TextBox>
+        <Label x:Name="lblFstBDBldFile2_description" Grid.Row="2" Grid.Column="2"/>
+
+        <Label x:Name="lblFstBDBldFile3" Grid.Row="3" Grid.Column="0"/>
+        <TextBox x:Name="txtFstBDBldFile3_value" Grid.Row="3" Grid.Column="1" IsReadOnly="True">
+            <TextBox.Background>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ActiveBorderColorKey}}"/>
+            </TextBox.Background>
+        </TextBox>
+        <Label x:Name="lblFstBDBldFile3_description" Grid.Row="3" Grid.Column="2"/>
+
+        <Label x:Name="lblFstInflowFile" Grid.Row="4" Grid.Column="0"/>
+        <TextBox x:Name="txtFstInflowFile_value" Grid.Row="4" Grid.Column="1" IsReadOnly="True">
+            <TextBox.Background>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ActiveBorderColorKey}}"/>
+            </TextBox.Background>
+        </TextBox>
+        <Label x:Name="lblFstInflowFile_description" Grid.Row="4" Grid.Column="2"/>
+
+        <Label x:Name="lblFstAeroFile" Grid.Row="5" Grid.Column="0"/>
+        <TextBox x:Name="txtFstAeroFile_value" Grid.Row="5" Grid.Column="1" IsReadOnly="True">
+            <TextBox.Background>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ActiveBorderColorKey}}"/>
+            </TextBox.Background>
+        </TextBox>
+        <Label x:Name="lblFstAeroFile_description" Grid.Row="5" Grid.Column="2"/>
+
+        <Label x:Name="lblFstServoFile" Grid.Row="6" Grid.Column="0"/>
+        <TextBox x:Name="txtFstServoFile_value" Grid.Row="6" Grid.Column="1" IsReadOnly="True">
+            <TextBox.Background>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ActiveBorderColorKey}}"/>
+            </TextBox.Background>
+        </TextBox>
+        <Label x:Name="lblFstServoFile_description" Grid.Row="6" Grid.Column="2"/>
+
+        <Label x:Name="lblFstHydroFile" Grid.Row="7" Grid.Column="0"/>
+        <TextBox x:Name="txtFstHydroFile_value" Grid.Row="7" Grid.Column="1" IsReadOnly="True">
+            <TextBox.Background>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ActiveBorderColorKey}}"/>
+            </TextBox.Background>
+        </TextBox>
+        <Label x:Name="lblFstHydroFile_description" Grid.Row="7" Grid.Column="2"/>
+
+        <Label x:Name="lblFstSubFile" Grid.Row="8" Grid.Column="0"/>
+        <TextBox x:Name="txtFstSubFile_value" Grid.Row="8" Grid.Column="1" IsReadOnly="True">
+            <TextBox.Background>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ActiveBorderColorKey}}"/>
+            </TextBox.Background>
+        </TextBox>
+        <Label x:Name="lblFstSubFile_description" Grid.Row="8" Grid.Column="2"/>
+
+        <Label x:Name="lblFstMooringFile" Grid.Row="9" Grid.Column="0"/>
+        <TextBox x:Name="txtFstMooringFile_value" Grid.Row="9" Grid.Column="1" IsReadOnly="True">
+            <TextBox.Background>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ActiveBorderColorKey}}"/>
+            </TextBox.Background>
+        </TextBox>
+        <Label x:Name="lblFstMooringFile_description" Grid.Row="9" Grid.Column="2"/>
+
+        <Label x:Name="lblFstIceFile" Grid.Row="10" Grid.Column="0"/>
+        <TextBox x:Name="txtFstIceFile_value" Grid.Row="10" Grid.Column="1" IsReadOnly="True">
+            <TextBox.Background>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ActiveBorderColorKey}}"/>
+            </TextBox.Background>
+        </TextBox>
+        <Label x:Name="lblFstIceFile_description" Grid.Row="10" Grid.Column="2"/>
+
+        <Button x:Name="btnOK" Content="OK" Grid.Row="11" Grid.Column="0" Margin="10,5,10,5" Click="btnOK_Click" MaxWidth="100"/>
+        <Button x:Name="btnCancel" Content="Cancel" Grid.Row="11" Grid.Column="1" Margin="10,5,10,5" Click="btnCancel_Click" MaxWidth="100"/>
+
+    </Grid>
+</Window>

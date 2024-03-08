@@ -13,7 +13,25 @@
     <Compile Update="AD\AD_Tower.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Fst\Fst_EnvCon.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Fst\Fst_Feature.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Fst\Fst_InputFiles.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Fst\Fst_Linearization.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Fst\Fst_Output.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Fst\Fst_SimCon.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Fst\Fst_Visualization.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -24,7 +42,25 @@
     <Page Update="AD\AD_Tower.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Fst\Fst_EnvCon.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Fst\Fst_Feature.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Fst\Fst_InputFiles.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Fst\Fst_Linearization.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Fst\Fst_Output.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Fst\Fst_SimCon.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Fst\Fst_Visualization.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MainWindow.xaml">

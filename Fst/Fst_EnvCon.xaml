@@ -1,0 +1,68 @@
+﻿<Window x:Class="HoopsFast.Fst.Fst_EnvCon"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HoopsFast.Fst"
+        mc:Ignorable="d"
+        Title="ENVIRONMENTAL CONDITIONS" Height="350" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="10*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Label x:Name="lblFstGravity" Grid.Row="0" Grid.Column="0"/>
+        <TextBox x:Name="txtFstGravity_value" Grid.Row="0" Grid.Column="1"/>
+        <Label x:Name="lblFstGravity_description" Grid.Row="0" Grid.Column="2"/>
+
+        <Label x:Name="lblFstAirDens" Grid.Row="1" Grid.Column="0"/>
+        <TextBox x:Name="txtFstAirDens_value" Grid.Row="1" Grid.Column="1"/>
+        <Label x:Name="lblFstAirDens_description" Grid.Row="1" Grid.Column="2"/>
+
+        <Label x:Name="lblFstWtrDens" Grid.Row="2" Grid.Column="0"/>
+        <TextBox x:Name="txtFstWtrDens_value" Grid.Row="2" Grid.Column="1"/>
+        <Label x:Name="lblFstWtrDens_description" Grid.Row="2" Grid.Column="2"/>
+
+        <Label x:Name="lblFstKinVisc" Grid.Row="3" Grid.Column="0"/>
+        <TextBox x:Name="txtFstKinVisc_value" Grid.Row="3" Grid.Column="1"/>
+        <Label x:Name="lblFstKinVisc_description" Grid.Row="3" Grid.Column="2"/>
+
+        <Label x:Name="lblFstSpdSound" Grid.Row="4" Grid.Column="0"/>
+        <TextBox x:Name="txtFstSpdSound_value" Grid.Row="4" Grid.Column="1"/>
+        <Label x:Name="lblFstSpdSound_description" Grid.Row="4" Grid.Column="2"/>
+
+        <Label x:Name="lblFstPatm" Grid.Row="5" Grid.Column="0"/>
+        <TextBox x:Name="txtFstPatm_value" Grid.Row="5" Grid.Column="1"/>
+        <Label x:Name="lblFstPatm_description" Grid.Row="5" Grid.Column="2"/>
+
+        <Label x:Name="lblFstPvap" Grid.Row="6" Grid.Column="0"/>
+        <TextBox x:Name="txtFstPvap_value" Grid.Row="6" Grid.Column="1"/>
+        <Label x:Name="lblFstPvap_description" Grid.Row="6" Grid.Column="2"/>
+
+        <Label x:Name="lblFstWtrDpth" Grid.Row="7" Grid.Column="0"/>
+        <TextBox x:Name="txtFstWtrDpth_value" Grid.Row="7" Grid.Column="1"/>
+        <Label x:Name="lblFstWtrDpth_description" Grid.Row="7" Grid.Column="2"/>
+
+        <Label x:Name="lblFstMSL2SWL" Grid.Row="8" Grid.Column="0"/>
+        <TextBox x:Name="txtFstMSL2SWL_value" Grid.Row="8" Grid.Column="1"/>
+        <Label x:Name="lblFstMSL2SWL_description" Grid.Row="8" Grid.Column="2"/>
+
+        <Button x:Name="btnOK" Content="OK" Grid.Row="9" Grid.Column="0" Margin="10,5,10,5" Click="btnOK_Click" MaxWidth="100"/>
+        <Button x:Name="btnCancel" Content="Cancel" Grid.Row="9" Grid.Column="1" Margin="10,5,10,5" Click="btnCancel_Click" MaxWidth="100"/>
+
+    </Grid>
+</Window>

@@ -148,7 +148,7 @@ namespace HoopsFast
                 NewVisualize.Execute(this);
 
                 Fast.fileName_fst = openD.FileName;
-                fstModel.filePath = System.IO.Path.GetDirectoryName(openD.FileName);
+                fstModel.filePath = System.IO.Path.GetDirectoryName(openD.FileName);   //may not be needed, check
                 fstModel.ParseFstInputFile(Fast.fileName_fst, Fast.status, ref fstInput);
 
                 Fast.fstInput = fstInput;
@@ -377,7 +377,7 @@ namespace HoopsFast
 
         private void menuItemFileSave_Click(object sender, RoutedEventArgs e)
         {
-
+            Fast.oneTurbine.fst.WriteFstFile(Fast.oneTurbine.fst);
         }
 
         private void menuItemFileSaveAs_Click(object sender, RoutedEventArgs e)
@@ -389,6 +389,42 @@ namespace HoopsFast
         {
             Fst.Fst_SimCon fst_SimCon = new Fst.Fst_SimCon();
             fst_SimCon.ShowDialog();
+        }
+
+        private void menuItemFstFeature_Click(object sender, RoutedEventArgs e)
+        {
+            Fst.Fst_Feature fst_Feature = new Fst.Fst_Feature();
+            fst_Feature.ShowDialog();
+        }
+
+        private void menuItemFstEnvCon_Click(object sender, RoutedEventArgs e)
+        {
+            Fst.Fst_EnvCon fst_EnvCon = new Fst.Fst_EnvCon();
+            fst_EnvCon.ShowDialog();
+        }
+
+        private void menuItemFstInputFiles_Click(object sender, RoutedEventArgs e)
+        {
+            Fst.Fst_InputFiles fst_InputFiles = new Fst.Fst_InputFiles();
+            fst_InputFiles.ShowDialog();
+        }
+
+        private void menuItemFstOutput_Click(object sender, RoutedEventArgs e)
+        {
+            Fst.Fst_Output fst_Output = new Fst.Fst_Output();
+            fst_Output.ShowDialog();
+        }
+
+        private void menuItemFstLinear_Click(object sender, RoutedEventArgs e)
+        {
+            Fst.Fst_Linearization fst_Linearization = new Fst.Fst_Linearization();
+            fst_Linearization.ShowDialog();
+        }
+
+        private void menuItemFstVisual_Click(object sender, RoutedEventArgs e)
+        {
+            Fst.Fst_Visualization fst_Visualization = new Fst.Fst_Visualization();
+            fst_Visualization.ShowDialog();
         }
     }
 }

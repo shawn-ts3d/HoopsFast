@@ -1,0 +1,73 @@
+﻿<Window x:Class="HoopsFast.Fst.Fst_Feature"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HoopsFast.Fst"
+        mc:Ignorable="d"
+        Title="FEATURE SWITCHES AND FLAGS" Height="350" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="10*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Label x:Name="lblFstCompElast" Grid.Row="0" Grid.Column="0"/>
+        <ComboBox x:Name="cboFstCompElast_value" Grid.Row="0" Grid.Column="1"/>
+        <Label x:Name="lblFstCompElast_description" Grid.Row="0" Grid.Column="2"/>
+
+        <Label x:Name="lblFstCompInflow" Grid.Row="1" Grid.Column="0"/>
+        <ComboBox x:Name="cboFstCompInflow_value" Grid.Row="1" Grid.Column="1"/>
+        <Label x:Name="lblFstCompInflow_description" Grid.Row="1" Grid.Column="2"/>
+
+        <Label x:Name="lblFstCompAero" Grid.Row="2" Grid.Column="0"/>
+        <ComboBox x:Name="cboFstCompAero_value" Grid.Row="2" Grid.Column="1"/>
+        <Label x:Name="lblFstCompAero_description" Grid.Row="2" Grid.Column="2"/>
+
+        <Label x:Name="lblFstCompServo" Grid.Row="3" Grid.Column="0"/>
+        <ComboBox x:Name="cboFstCompServo_value" Grid.Row="3" Grid.Column="1"/>
+        <Label x:Name="lblFstCompServo_description" Grid.Row="3" Grid.Column="2"/>
+
+        <Label x:Name="lblFstCompHydro" Grid.Row="4" Grid.Column="0"/>
+        <ComboBox x:Name="cboFstCompHydro_value" Grid.Row="4" Grid.Column="1"/>
+        <Label x:Name="lblFstCompHydro_description" Grid.Row="4" Grid.Column="2"/>
+
+        <Label x:Name="lblFstCompSub" Grid.Row="5" Grid.Column="0"/>
+        <ComboBox x:Name="cboFstCompSub_value" Grid.Row="5" Grid.Column="1"/>
+        <Label x:Name="lblFstCompSub_description" Grid.Row="5" Grid.Column="2"/>
+
+        <Label x:Name="lblFstCompMooring" Grid.Row="6" Grid.Column="0"/>
+        <ComboBox x:Name="cboFstCompMooring_value" Grid.Row="6" Grid.Column="1"/>
+        <Label x:Name="lblFstCompMooring_description" Grid.Row="6" Grid.Column="2"/>
+
+        <Label x:Name="lblFstCompIce" Grid.Row="7" Grid.Column="0"/>
+        <ComboBox x:Name="cboFstCompIce_value" Grid.Row="7" Grid.Column="1"/>
+        <Label x:Name="lblFstCompIce_description" Grid.Row="7" Grid.Column="2"/>
+
+        <Label x:Name="lblFstMHK" Grid.Row="8" Grid.Column="0"/>
+        <ComboBox x:Name="cboFstMHK_value" Grid.Row="8" Grid.Column="1"/>
+        <Label x:Name="lblFstMHK_description" Grid.Row="8" Grid.Column="2"/>
+
+        
+        <Button x:Name="btnOK" Content="OK" Grid.Row="9" Grid.Column="0" Margin="10,5,10,5" Click="btnOK_Click" MaxWidth="100"/>
+        <Button x:Name="btnCancel" Content="Cancel" Grid.Row="9" Grid.Column="1" Margin="10,5,10,5" Click="btnCancel_Click" MaxWidth="100"/>
+
+
+
+
+
+    </Grid>
+</Window>

@@ -34,34 +34,41 @@
                     <ribbon:RibbonApplicationMenuItem x:Name="menuItemFileOpen" Header="_Open" Click="menuItemFileOpen_Click" />
                     <ribbon:RibbonSeparator />
                     <ribbon:RibbonApplicationMenuItem x:Name="menuItemFileSave" Header="Save" Click="menuItemFileSave_Click" />
-                    <ribbon:RibbonSeparator />
-                    <ribbon:RibbonApplicationMenuItem x:Name="menuItemFileSaveAs" Header="Save As" Click="menuItemFileSaveAs_Click" />
+                    <!--<ribbon:RibbonSeparator />
+                    <ribbon:RibbonApplicationMenuItem x:Name="menuItemFileSaveAs" Header="Save As" Click="menuItemFileSaveAs_Click" />-->
                     <ribbon:RibbonSeparator />
                     <ribbon:RibbonApplicationMenuItem x:Name="menuItemFileExit" Header="E_xit" Command="{Binding ExitCommand}"/>
                 </ribbon:RibbonApplicationMenu>
             </ribbon:Ribbon.ApplicationMenu>
 
-            
+            <ribbon:RibbonTab x:Name="menuTabVis" Header="Visualize">
+
+            </ribbon:RibbonTab>
+
+            <ribbon:RibbonTab x:Name="menuTabSimulate" Header="Simulate">
+
+            </ribbon:RibbonTab>
+
             <ribbon:RibbonTab x:Name="menuTabFst" Header="fst" Visibility="Hidden">
                 <ribbon:RibbonGroup Header="fst input">
                     <ribbon:RibbonGroup.GroupSizeDefinitions>
                         <ribbon:RibbonGroupSizeDefinition>
-                            <ribbon:RibbonControlSizeDefinition ImageSize="Small" IsLabelVisible="True" />
-                            <ribbon:RibbonControlSizeDefinition ImageSize="Small" IsLabelVisible="True" />
-                            <ribbon:RibbonControlSizeDefinition ImageSize="Small" IsLabelVisible="True" />
-                            <ribbon:RibbonControlSizeDefinition ImageSize="Small" IsLabelVisible="True" />
-                            <ribbon:RibbonControlSizeDefinition ImageSize="Small" IsLabelVisible="True" />
-                            <ribbon:RibbonControlSizeDefinition ImageSize="Small" IsLabelVisible="True" />
-                            <ribbon:RibbonControlSizeDefinition ImageSize="Small" IsLabelVisible="True" />
+                            <ribbon:RibbonControlSizeDefinition ImageSize="Large" IsLabelVisible="True" />
+                            <ribbon:RibbonControlSizeDefinition ImageSize="Large" IsLabelVisible="True" />
+                            <ribbon:RibbonControlSizeDefinition ImageSize="Large" IsLabelVisible="True" />
+                            <ribbon:RibbonControlSizeDefinition ImageSize="Large" IsLabelVisible="True" />
+                            <ribbon:RibbonControlSizeDefinition ImageSize="Large" IsLabelVisible="True" />
+                            <ribbon:RibbonControlSizeDefinition ImageSize="Large" IsLabelVisible="True" />
+                            <ribbon:RibbonControlSizeDefinition ImageSize="Large" IsLabelVisible="True" />
                         </ribbon:RibbonGroupSizeDefinition>
                     </ribbon:RibbonGroup.GroupSizeDefinitions>
                     <ribbon:RibbonButton x:Name="menuItemFstSimCon"  Label="Simulation Control" Click="menuItemFstSimCon_Click" />
-                    <ribbon:RibbonButton  Label="Feature Switches and Flags" />
-                    <ribbon:RibbonButton  Label="Environmental Conditions" />
-                    <ribbon:RibbonButton  Label="Input Files" />
-                    <ribbon:RibbonButton  Label="Output" />
-                    <ribbon:RibbonButton  Label="Linearization" />
-                    <ribbon:RibbonButton  Label="Visualization" />
+                    <ribbon:RibbonButton x:Name="menuItemFstFeature"  Label="Feature Switches and Flags" Click="menuItemFstFeature_Click" />
+                    <ribbon:RibbonButton x:Name="menuItemFstEnvCon"  Label="Environmental Conditions" Click="menuItemFstEnvCon_Click" />
+                    <ribbon:RibbonButton x:Name="menuItemFstInputFiles"  Label="Input Files" Click="menuItemFstInputFiles_Click" />
+                    <ribbon:RibbonButton x:Name="menuItemFstOutput"  Label="Output" Click="menuItemFstOutput_Click" />
+                    <ribbon:RibbonButton x:Name="menuItemFstLinear"  Label="Linearization" Click="menuItemFstLinear_Click" />
+                    <ribbon:RibbonButton x:Name="menuItemFstVisual"  Label="Visualization" Click="menuItemFstVisual_Click" />
                 </ribbon:RibbonGroup>
             </ribbon:RibbonTab>
 
@@ -141,6 +148,8 @@
                     <ribbon:RibbonButton Command="{Binding VisMD}" x:Name="menuItemVisMD"  Label="Hide/Show MD" />
                 </ribbon:RibbonGroup>
             </ribbon:RibbonTab>
+
+
 
         </ribbon:Ribbon>
 

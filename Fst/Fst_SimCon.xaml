@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HoopsFast.Fst"
         mc:Ignorable="d"
-        Title="Fst_SimCon" Height="300" Width="800">
+        Title="SIMULATION CONTROL" Height="300" Width="800">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*" />
@@ -26,9 +26,36 @@
 
 
         <Label x:Name="lblFstEcho" Grid.Row="0" Grid.Column="0"/>
-        <CheckBox x:Name="chkFstEcho_Value" Grid.Row="0" Grid.Column="1"/>
-        <Label x:Name="lblFstEcho_Description" Grid.Row="0" Grid.Column="2"/>
+        <CheckBox x:Name="chkFstEcho_value" Grid.Row="0" Grid.Column="1"/>
+        <Label x:Name="lblFstEcho_description" Grid.Row="0" Grid.Column="2"/>
 
+        <Label x:Name="lblFstAbortLevel" Grid.Row="1" Grid.Column="0"/>
+        <ComboBox x:Name="cboFstAbortLevel_value" Grid.Row="1" Grid.Column="1"/>
+        <Label x:Name="lblFstAbortLevel_description" Grid.Row="1" Grid.Column="2"/>
+
+        <Label x:Name="lblFstTMax" Grid.Row="2" Grid.Column="0"/>
+        <TextBox x:Name="txtFstTMax_value" Grid.Row="2" Grid.Column="1"/>
+        <Label x:Name="lblFstTMax_description" Grid.Row="2" Grid.Column="2"/>
+
+        <Label x:Name="lblFstDT" Grid.Row="3" Grid.Column="0"/>
+        <TextBox x:Name="txtFstDT_value" Grid.Row="3" Grid.Column="1"/>
+        <Label x:Name="lblFstDT_description" Grid.Row="3" Grid.Column="2"/>
+
+        <Label x:Name="lblFstInterpOrder" Grid.Row="4" Grid.Column="0"/>
+        <ComboBox x:Name="cboFstInterpOrder_value" Grid.Row="4" Grid.Column="1"/>
+        <Label x:Name="lblFstInterpOrder_description" Grid.Row="4" Grid.Column="2"/>
+
+        <Label x:Name="lblFstNumCrctn" Grid.Row="5" Grid.Column="0"/>
+        <TextBox x:Name="txtFstNumCrctn_value" Grid.Row="5" Grid.Column="1"/>
+        <Label x:Name="lblFstNumCrctn_description" Grid.Row="5" Grid.Column="2"/>
+
+        <Label x:Name="lblFstDT_UJac" Grid.Row="6" Grid.Column="0"/>
+        <TextBox x:Name="txtFstDT_UJac_value" Grid.Row="6" Grid.Column="1"/>
+        <Label x:Name="lblFstDT_UJac_description" Grid.Row="6" Grid.Column="2"/>
+
+        <Label x:Name="lblFstUJacSclFact" Grid.Row="7" Grid.Column="0"/>
+        <TextBox x:Name="txtFstUJacSclFact_value" Grid.Row="7" Grid.Column="1"/>
+        <Label x:Name="lblFstUJacSclFact_description" Grid.Row="7" Grid.Column="2"/>
 
 
 
