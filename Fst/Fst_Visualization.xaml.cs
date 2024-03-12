@@ -51,6 +51,34 @@ namespace HoopsFast.Fst
         private void btnOK_Click(object sender, RoutedEventArgs e)
         {
             //Update inputs
+            if (Fast.oneTurbine.fst.WrVTK.value != cboFstWrVTK_value.SelectedIndex)
+            {
+                Fast.oneTurbine.fst.WrVTK.oldValue = Fast.oneTurbine.fst.WrVTK.value;
+                Fast.oneTurbine.fst.WrVTK.value = cboFstWrVTK_value.SelectedIndex;
+            }
+
+            if (Fast.oneTurbine.fst.VTK_type.value != cboFstVTK_type_value.SelectedIndex+1)
+            {
+                Fast.oneTurbine.fst.VTK_type.oldValue = Fast.oneTurbine.fst.VTK_type.value;
+                Fast.oneTurbine.fst.VTK_type.value = cboFstVTK_type_value.SelectedIndex+1;
+            }
+
+            if (Fast.oneTurbine.fst.VTK_fields.value != chkFstVTK_fields_value.IsChecked.Value)
+            {
+                Fast.oneTurbine.fst.VTK_fields.oldValue = Fast.oneTurbine.fst.VTK_fields.value;
+                Fast.oneTurbine.fst.VTK_fields.value = chkFstVTK_fields_value.IsChecked.Value;
+            }
+
+            if (Fast.oneTurbine.fst.VTK_fps.value != double.Parse(txtFstVTK_fps_value.Text))
+            {
+                Fast.oneTurbine.fst.VTK_fps.oldValue = Fast.oneTurbine.fst.VTK_fps.value;
+                Fast.oneTurbine.fst.VTK_fps.value = double.Parse(txtFstVTK_fps_value.Text);
+            }
+
+
+
+
+
 
 
             this.Close();

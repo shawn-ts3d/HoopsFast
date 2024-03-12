@@ -85,9 +85,77 @@ namespace HoopsFast.Fst
         private void btnOK_Click(object sender, RoutedEventArgs e)
         {
             //Update inputs
+            if (Fast.oneTurbine.fst.Linearize.value != chkFstLinearize_value.IsChecked.Value)
+            {
+                Fast.oneTurbine.fst.Linearize.oldValue = Fast.oneTurbine.fst.Linearize.value;
+                Fast.oneTurbine.fst.Linearize.value = chkFstLinearize_value.IsChecked.Value;
+            }
 
+            if (Fast.oneTurbine.fst.CalcSteady.value != chkFstCalcSteady_value.IsChecked.Value)
+            {
+                Fast.oneTurbine.fst.CalcSteady.oldValue = Fast.oneTurbine.fst.CalcSteady.value;
+                Fast.oneTurbine.fst.CalcSteady.value = chkFstCalcSteady_value.IsChecked.Value;
+            }
 
+            if (Fast.oneTurbine.fst.TrimCase.value != cboFstTrimCase_value.SelectedIndex+1)
+            {
+                Fast.oneTurbine.fst.TrimCase.oldValue = Fast.oneTurbine.fst.TrimCase.value;
+                Fast.oneTurbine.fst.TrimCase.value = cboFstTrimCase_value.SelectedIndex+1;
+            }
 
+            if (Fast.oneTurbine.fst.TrimTol.value != double.Parse(txtFstTrimTol_value.Text))
+            {
+                Fast.oneTurbine.fst.TrimTol.oldValue = Fast.oneTurbine.fst.TrimTol.value;
+                Fast.oneTurbine.fst.TrimTol.value = double.Parse(txtFstTrimTol_value.Text);
+            }
+
+            if (Fast.oneTurbine.fst.TrimGain.value != double.Parse(txtFstTrimGain_value.Text))
+            {
+                Fast.oneTurbine.fst.TrimGain.oldValue = Fast.oneTurbine.fst.TrimGain.value;
+                Fast.oneTurbine.fst.TrimGain.value = double.Parse(txtFstTrimGain_value.Text);
+            }
+
+            if (Fast.oneTurbine.fst.Twr_Kdmp.value != double.Parse(txtFstTwr_Kdmp_value.Text))
+            {
+                Fast.oneTurbine.fst.Twr_Kdmp.oldValue = Fast.oneTurbine.fst.Twr_Kdmp.value;
+                Fast.oneTurbine.fst.Twr_Kdmp.value = double.Parse(txtFstTwr_Kdmp_value.Text);
+            }
+
+            if (Fast.oneTurbine.fst.Bld_Kdmp.value != double.Parse(txtFstBld_Kdmp_value.Text))
+            {
+                Fast.oneTurbine.fst.Bld_Kdmp.oldValue = Fast.oneTurbine.fst.Bld_Kdmp.value;
+                Fast.oneTurbine.fst.Bld_Kdmp.value = double.Parse(txtFstBld_Kdmp_value.Text);
+            }
+
+            if (Fast.oneTurbine.fst.NLinTimes.value != int.Parse(txtFstNLinTimes_value.Text))
+            {
+                Fast.oneTurbine.fst.NLinTimes.oldValue = Fast.oneTurbine.fst.NLinTimes.value;
+                Fast.oneTurbine.fst.NLinTimes.value = int.Parse(txtFstBld_Kdmp_value.Text);
+            }
+
+            if (Fast.oneTurbine.fst.LinInputs.value != cboFstLinInputs_value.SelectedIndex)
+            {
+                Fast.oneTurbine.fst.LinInputs.oldValue = Fast.oneTurbine.fst.LinInputs.value;
+                Fast.oneTurbine.fst.LinInputs.value = cboFstLinInputs_value.SelectedIndex;
+            }
+
+            if (Fast.oneTurbine.fst.LinOutputs.value != cboFstLinOutputs_value.SelectedIndex)
+            {
+                Fast.oneTurbine.fst.LinOutputs.oldValue = Fast.oneTurbine.fst.LinOutputs.value;
+                Fast.oneTurbine.fst.LinOutputs.value = cboFstLinOutputs_value.SelectedIndex;
+            }
+
+            if (Fast.oneTurbine.fst.LinOutJac.value != chkFstLinOutJac_value.IsChecked.Value)
+            {
+                Fast.oneTurbine.fst.LinOutJac.oldValue = Fast.oneTurbine.fst.LinOutJac.value;
+                Fast.oneTurbine.fst.LinOutJac.value = chkFstLinOutJac_value.IsChecked.Value;
+            }
+
+            if (Fast.oneTurbine.fst.LinOutMod.value != chkFstLinOutMod_value.IsChecked.Value)
+            {
+                Fast.oneTurbine.fst.LinOutMod.oldValue = Fast.oneTurbine.fst.LinOutMod.value;
+                Fast.oneTurbine.fst.LinOutMod.value = chkFstLinOutMod_value.IsChecked.Value;
+            }
 
             this.Close();
         }
