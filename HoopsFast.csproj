@@ -22,9 +22,13 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="EPPlus" Version="7.1.1" />
     <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
-    <PackageReference Include="Microsoft.Windows.Compatibility" Version="5.0.0" />
+    <PackageReference Include="Microsoft.Windows.Compatibility" Version="8.0.4" />
     <PackageReference Include="RibbonControlsLibrary" Version="4.0.0" />
+    <PackageReference Include="ScottPlot" Version="5.0.25" />
+    <PackageReference Include="ScottPlot.WPF" Version="5.0.25" />
+    <PackageReference Include="SkiaSharp.Views.WPF" Version="2.88.8" />
     <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
   </ItemGroup>
 

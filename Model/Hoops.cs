@@ -208,7 +208,8 @@ namespace HoopsFast
             }
 
             HPS.Vector vector = new HPS.Vector(0.0f, 0.0f, 1.0f);
-            ADBladeKey.GetModellingMatrixControl().RotateOffAxis(vector, 180.0f);
+            ADBladeKey.GetModellingMatrixControl().RotateOffAxis(vector, 0.0f);
+
 
             if (oneTurbine.AD.ADBlFile2.value == oneTurbine.AD.ADBlFile1.value)
             {
@@ -249,9 +250,9 @@ namespace HoopsFast
                (float)(oneTurbine.ED.TowerHt.value + oneTurbine.ED.NacCMzn.value));
 
 
-            ADBladeKey.GetModellingMatrixControl().Translate(0.0f, 0.0f, (float)oneTurbine.ED.HubRad.value);
-            ADBladeKey2.GetModellingMatrixControl().Translate(0.0f, -(float)oneTurbine.ED.HubRad.value, 0.0f);
-            ADBladeKey3.GetModellingMatrixControl().Translate(0.0f, (float)oneTurbine.ED.HubRad.value, 0.0f);
+            //ADBladeKey.GetModellingMatrixControl().Translate(0.0f, 0.0f, (float)oneTurbine.ED.HubRad.value);
+            //ADBladeKey2.GetModellingMatrixControl().Translate(0.0f, -(float)oneTurbine.ED.HubRad.value, 0.0f);
+            //ADBladeKey3.GetModellingMatrixControl().Translate(0.0f, (float)oneTurbine.ED.HubRad.value, 0.0f);
         }
 
         private static HPS.Point[] GetPointArray(ADAfFileInput af, float chord, float z)
@@ -263,8 +264,8 @@ namespace HoopsFast
             //the last point is the same as the first one
             for (int i = 1; i < size-1; i++)
             {
-                float x = (float)af.NumCoords.value[i+1][0];
-                float y = (float)af.NumCoords.value[i+1][1];
+                float x = (float)af.NumCoords.value[i+1][0] * chord * 1.0f;
+                float y = (float)af.NumCoords.value[i+1][1] * chord * 1.0f;
                 PointArray[i-1] = new HPS.Point(x, y, z);
             }
 
@@ -330,10 +331,10 @@ namespace HoopsFast
 
             HPS.SphereKit sphereKit = new HPS.SphereKit();
             sphereKit.SetCenter(new HPS.Point(
-                (float)(oneTurbine.ED.NacCMxn.value * 2.0 + oneTurbine.ED.HubRad.value),
+                (float)(oneTurbine.ED.NacCMxn.value * 2.0 + oneTurbine.ED.HubRad.value * 2.0),
                 0.0f,
                 (float)(twrTopNode.Value[0] + oneTurbine.ED.NacCMzn.value)));
-            sphereKit.SetRadius((float)oneTurbine.ED.HubRad.value);
+            sphereKit.SetRadius((float)oneTurbine.ED.HubRad.value * 2.0f);
             sphereKit.SetBasis(new HPS.Vector(0, 1, 0), new HPS.Vector(1, 0, 0));
 
             //insert

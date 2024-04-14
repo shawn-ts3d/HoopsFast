@@ -15,6 +15,8 @@ namespace HoopsFast
         public static FstInput fstInput { set; get; }
         public static string fileName_fst { set; get; }
         public static string status { set; get; }
+
+        public static IDictionary<string, string> outParameterList { get; set; }
     }
 
 }

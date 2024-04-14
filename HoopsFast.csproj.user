@@ -34,6 +34,12 @@
     <Compile Update="Fst\Fst_Visualization.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="PostProcess\FstOutResults.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="PostProcess\Plot.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="AD\AD_GeneralOptions.xaml">
@@ -64,6 +70,12 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="PostProcess\FstOutResults.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="PostProcess\Plot.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

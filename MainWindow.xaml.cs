@@ -17,6 +17,9 @@ using System.Windows.Controls.Ribbon;
 
 using FASTInputDll;
 using Microsoft.Win32;
+using System.Diagnostics;
+using System.Windows.Threading;
+using System.Threading;
 
 namespace HoopsFast
 {
@@ -157,6 +160,11 @@ namespace HoopsFast
                 Fast.oneTurbine = new TurbineData();
                 Fast.oneTurbine.fst.ParseFstInput(Fast.fileName_fst, Fast.status);
 
+
+                menuTabSimulate.Visibility = Visibility.Visible;
+                menuTabVis.Visibility = Visibility.Visible;
+                menuTabVis.IsSelected = true;
+
                 //fst
                 menuTabFst.Visibility = Visibility.Visible;
 
@@ -285,11 +293,23 @@ namespace HoopsFast
         private Visualize _visAD;
         private Visualize _visBlade;
 
-
-
         private Visualize _visED;
         private Visualize _visSD;
         private Visualize _visMD;
+
+        private Visualize _visAnimate;
+
+        private Visualize _operatorOrbit;
+        private Visualize _operatorPan;
+        private Visualize _operatorZoom;
+        private Visualize _operatorZoomBox;
+        private Visualize _operatorSelect;
+
+        private Visualize _effectSimpleShadow;
+        private Visualize _effectHiddenLine;
+        private Visualize _effectEyeDome;
+        private Visualize _effectReflection;
+
         public ICommand ExitCommand
         {
             get
@@ -362,6 +382,105 @@ namespace HoopsFast
                 return _visMD;
             }
         }
+        public ICommand VisAnimate
+        {
+            get
+            {
+                if (_visAnimate == null)
+                    _visAnimate = new VisualizeAnimate(this);
+                return _visAnimate;
+            }
+        }
+
+        public ICommand OperatorOrbit
+        {
+            get
+            {
+                if (_operatorOrbit == null)
+                    _operatorOrbit = new OperatorOrbit(this);
+                return _operatorOrbit;
+            }
+        }
+
+        public ICommand OperatorPan
+        {
+            get
+            {
+                if (_operatorPan == null)
+                    _operatorPan = new OperatorPan(this);
+                return _operatorPan;
+            }
+        }
+
+        public ICommand OperatorZoom
+        {
+            get
+            {
+                if (_operatorZoom == null)
+                    _operatorZoom = new OperatorZoom(this);
+                return _operatorZoom;
+            }
+        }
+
+        public ICommand OperatorZoomBox
+        {
+            get
+            {
+                if (_operatorZoomBox == null)
+                    _operatorZoomBox = new OperatorZoomBox(this);
+                return _operatorZoomBox;
+            }
+        }
+
+        public ICommand OperatorSelect
+        {
+            get
+            {
+                if (_operatorSelect == null)
+                    _operatorSelect = new OperatorSelect(this);
+                return _operatorSelect;
+            }
+        }
+
+        public ICommand EffectSimpleShadow
+        {
+            get
+            {
+                if (_effectSimpleShadow == null)
+                    _effectSimpleShadow = new EffectSimpleShadow(this);
+                return _effectSimpleShadow;
+            }
+        }
+
+        public ICommand EffectHiddenLine
+        {
+            get
+            {
+                if (_effectHiddenLine == null)
+                    _effectHiddenLine = new EffectHiddenLine(this);
+                return _effectHiddenLine;
+            }
+        }
+
+        public ICommand EffectEyeDome
+        {
+            get
+            {
+                if (_effectEyeDome == null)
+                    _effectEyeDome = new EffectEyeDome(this);
+                return _effectEyeDome;
+            }
+        }
+
+        public ICommand EffectReflection
+        {
+            get
+            {
+                if (_effectReflection == null)
+                    _effectReflection = new EffectReflection(this);
+                return _effectReflection;
+            }
+        }
 
         private void menuItemADTower_Click(object sender, RoutedEventArgs e)
         {
@@ -426,5 +545,133 @@ namespace HoopsFast
             Fst.Fst_Visualization fst_Visualization = new Fst.Fst_Visualization();
             fst_Visualization.ShowDialog();
         }
+
+        private void menuItemSimRun_Click(object sender, RoutedEventArgs e)
+        {
+            ProcessStartInfo startInfo = new ProcessStartInfo();
+            startInfo.FileName = "openfast_x64.exe";
+            startInfo.Arguments = Fast.fileName_fst;
+
+            try
+            {
+                // Start the process with the info we specified.
+                // Call WaitForExit and then the using statement will close.
+                using (Process exeProcess = Process.Start(startInfo))
+                {
+                    exeProcess.WaitForExit();
+                }
+            }
+            catch
+            {
+                // Log error.
+            }
+
+        }
+
+        private void menuItemSimOpenOutFile_Click(object sender, RoutedEventArgs e)
+        {
+            var p = new Process();
+            var resultFile = System.IO.Path.ChangeExtension(Fast.fileName_fst, ".out");
+            if (System.IO.File.Exists(resultFile))
+            {
+                p.StartInfo = new ProcessStartInfo(resultFile)
+                {
+                    UseShellExecute = true
+                };
+                p.Start();
+            }
+            else
+            {
+                MessageBox.Show("OpenFAST out file " + resultFile + " does not exist!");
+            }
+        }
+
+        private void menuItemSimImportResults_Click(object sender, RoutedEventArgs e)
+        {
+            var outFile = System.IO.Path.ChangeExtension(Fast.fileName_fst, ".out");
+            if (System.IO.File.Exists(outFile))
+            {
+                PostProcess.FstOutResults fst_OutResults = new PostProcess.FstOutResults(outFile);
+                fst_OutResults.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("OpenFAST out file " + outFile + " does not exist!");
+            }
+        }
+
+        private void menuItemExportHsf_Click(object sender, RoutedEventArgs e)
+        {
+            Microsoft.Win32.SaveFileDialog dlg = new Microsoft.Win32.SaveFileDialog();
+            dlg.Filter = "HSF|*.hsf";
+            dlg.ShowDialog();
+            if (dlg.FileName != "")
+            {
+                HPS.SegmentKey exportFromHere;
+
+                if (Hoops.Model.Type() == HPS.Type.None)
+                    exportFromHere = GetCanvas().GetFrontView().GetSegmentKey();
+                else
+                    exportFromHere = Hoops.Model.GetSegmentKey();
+
+                HPS.IOResult status = HPS.IOResult.Failure;
+                try
+                {
+                    HPS.Stream.ExportNotifier notifier = HPS.Stream.File.Export(dlg.FileName, exportFromHere, new HPS.Stream.ExportOptionsKit());
+                    DisplayExportProgress(notifier);   //this needs to be changed!
+                    status = notifier.Status();
+                }
+                catch (HPS.IOException ee)
+                { MessageBox.Show("HPS::Stream::File::Export threw an exception: " + ee.Message); }
+                if (status != HPS.IOResult.Success && status != HPS.IOResult.Canceled)
+                    MessageBox.Show("HPS.Stream.Export encountered an error.");
+            }
+        }
+
+        private bool DisplayExportProgress(HPS.IONotifier notifier)
+        {
+            bool success = true;
+            InvokeUIAction(delegate ()
+            {
+                //show the progress dialog
+                GetSprocketsControl().IsEnabled = false;
+                //var dlg = new ProgressBar(_win, notifier, ProgressBar.Operation.Export);
+                //dlg.Owner = _win;
+                //dlg.ShowDialog();
+
+                //success = dlg.WasSuccessful();
+                Thread.Sleep(50000);
+
+                GetSprocketsControl().IsEnabled = true;
+            }, true);
+            return success;
+        }
+
+        private void InvokeUIAction(Action action, bool wait)
+        {
+            if (wait)
+                Dispatcher.Invoke(DispatcherPriority.Normal, new Action(action));
+            else
+                Dispatcher.BeginInvoke(new Action(action));
+        }
+
+        public void Unhighlight()
+        {
+            var highlightOptions = new HPS.HighlightOptionsKit();
+            highlightOptions.SetStyleName("highlight_style").SetNotification(true);
+
+            var canvas = GetSprocketsControl().Canvas;
+            canvas.GetWindowKey().GetHighlightControl().Unhighlight(highlightOptions);
+
+            HPS.Database.GetEventDispatcher().InjectEvent(new HPS.HighlightEvent(HPS.HighlightEvent.Action.Unhighlight, new HPS.SelectionResults(), highlightOptions));
+            HPS.Database.GetEventDispatcher().InjectEvent(new HPS.ComponentHighlightEvent(HPS.ComponentHighlightEvent.Action.Unhighlight, canvas, 0, new HPS.ComponentPath(), highlightOptions));
+        }
+
+        public void Update()
+        {
+            GetSprocketsControl().Canvas.Update();
+        }
+
+
     }
 }
