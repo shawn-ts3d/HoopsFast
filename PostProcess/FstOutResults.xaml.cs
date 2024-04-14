@@ -37,7 +37,7 @@ namespace HoopsFast.PostProcess
             {
                 Fast.outParameterList = new Dictionary<string, string>();
                 ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
-                using (ExcelPackage xlPackage = new ExcelPackage(new FileInfo(@"D:\Code\FAST\OpenFAST\docs\OtherSupporting\OutListParameters.xlsx")))
+                using (ExcelPackage xlPackage = new ExcelPackage(new FileInfo(@"..\..\..\..\Resources\OutListParameters.xlsx")))
                 {
                     for (int i = 1; i < xlPackage.Workbook.Worksheets.Count-3; i++)
                     {
