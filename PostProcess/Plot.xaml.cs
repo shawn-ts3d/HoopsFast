@@ -19,13 +19,15 @@ namespace HoopsFast.PostProcess
     /// </summary>
     public partial class Plot : Window
     {
-        public Plot(List<double> dataX, List<double> dataY)
+        public Plot(List<double> dataX, List<List<double>> dataY)
         {
             InitializeComponent();
 
-            WpfPlot1.Plot.Add.Scatter(dataX, dataY);
+            foreach (var data in dataY)
+            {
+                WpfPlot1.Plot.Add.Scatter(dataX, data, WpfPlot1.Plot.Add.GetNextColor());
+            }
             WpfPlot1.Refresh();
-
         }
     }
 }

@@ -10,12 +10,12 @@
     <Grid>
 
         <DataGrid Height="384" HorizontalAlignment="Left" Margin="12,21,0,0" x:Name="dataGridOutResults" VerticalAlignment="Top">
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="Selected" Binding="{Binding selected}" />
+            <!--<DataGrid.Columns>
+                <DataGridCheckBoxColumn Header="Selected" Binding="{Binding selected}" />
                 <DataGridTextColumn Header="Name" Binding="{Binding name}"/>
                 <DataGridTextColumn Header="Unit" Binding="{Binding unit}"/>
                 <DataGridTextColumn Header="Description" Binding="{Binding description}"/>
-            </DataGrid.Columns>
+            </DataGrid.Columns>-->
         </DataGrid>
 
         <Button x:Name="btnPlot" Content="Plot" HorizontalAlignment="Left" Margin="617,32,0,0" VerticalAlignment="Top" RenderTransformOrigin="16.447,-18.681" Height="33" Width="90" Click="btnPlot_Click"/>

@@ -24,7 +24,8 @@ namespace HoopsFast.PostProcess
     {
         IDictionary<string, string> unit = new Dictionary<string, string>();
         IDictionary<string, List<double>> values = new Dictionary<string, List<double>>();
-        IDictionary<string, string> description = new Dictionary<string, string>();
+
+        List<OutParameter> listOutParameters = new List<OutParameter>();
 
         public FstOutResults(string outFile)
         {
@@ -51,7 +52,23 @@ namespace HoopsFast.PostProcess
                             {
                                 if (myWorksheet.Cells[rowNum, 1].Text.Trim() == "" && myWorksheet.Cells[rowNum, 2].Text.Trim() != "")
                                 {
-                                    Fast.outParameterList[myWorksheet.Cells[rowNum, 2].Text.Trim()] = myWorksheet.Cells[rowNum, 4].Text.Trim();
+                                    if (!Fast.outParameterList.ContainsKey(myWorksheet.Cells[rowNum, 2].Text.Trim()))
+                                    {
+                                        Fast.outParameterList[myWorksheet.Cells[rowNum, 2].Text.Trim()] = myWorksheet.Cells[rowNum, 4].Text.Trim();
+                                    }
+                                        
+                                    var otherNames = myWorksheet.Cells[rowNum, 3].Text.Trim();
+                                    if (otherNames != "")
+                                    {
+                                        var listOtherNames = otherNames.Split(',').ToList();
+                                        foreach (var name in listOtherNames)
+                                        {
+                                            if (!Fast.outParameterList.ContainsKey(name))
+                                            {
+                                                Fast.outParameterList[name] = myWorksheet.Cells[rowNum, 4].Text.Trim();
+                                            }
+                                        }
+                                    }
                                 }
                             }
                         }
@@ -59,7 +76,7 @@ namespace HoopsFast.PostProcess
                 }
             }
 
-            dataGridOutResults.ItemsSource = LoadData();
+            LoadData();
         }
 
         private void ParseOutFile(string outFile)
@@ -87,7 +104,6 @@ namespace HoopsFast.PostProcess
             {
                 unit[parameters[i]] = unitArray[i];
                 values[parameters[i]] = new List<double>();
-                description[parameters[i]] = "";
             }
 
             for (int i = valueLineNum; i < lines.Length; i++)
@@ -103,10 +119,8 @@ namespace HoopsFast.PostProcess
             }
         }
 
-        private List<OutParameter> LoadData()
+        private void LoadData()
         {
-            List<OutParameter> outParameters = new List<OutParameter>();
-
             for (int i = 0; i < unit.Count; i++)
             {
                 OutParameter oneParameter = new OutParameter();     
@@ -129,19 +143,28 @@ namespace HoopsFast.PostProcess
                         oneParameter.description = "";
                     }      
                 }
-                
-                outParameters.Add(oneParameter);
+
+                listOutParameters.Add(oneParameter);
+                //dataGridOutResults.Items.Add(oneParameter);              
             }
 
-            return outParameters;
+
+            dataGridOutResults.ItemsSource = listOutParameters;
+            return;
         }
 
         private void btnPlot_Click(object sender, RoutedEventArgs e)
         {
             List<double> timeData = values["Time"];
-            List<double> data = values["RotSpeed"];
+            List<List<double>> data = new List<List<double>>();
 
-
+            foreach (var parameter in listOutParameters)
+            {
+                if (parameter.selected && parameter.name != "Time")
+                {
+                    data.Add(values[parameter.name]);
+                }
+            }
 
             Plot onePlot = new Plot(timeData, data);
             onePlot.ShowDialog();
