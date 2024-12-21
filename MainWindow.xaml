@@ -50,7 +50,7 @@
                             <ribbon:RibbonControlSizeDefinition ImageSize="Large" IsLabelVisible="True" />
                         </ribbon:RibbonGroupSizeDefinition>
                     </ribbon:RibbonGroup.GroupSizeDefinitions>
-                    <ribbon:RibbonButton Command="{Binding VisAnimate}" x:Name="menuItemVisAnimate"  Label="Animate" />
+                    <ribbon:RibbonButton Command="{Binding VisAnimate}" x:Name="menuItemVisAnimate"  Label="Animate" LargeImageSource="pack://application:,,,/Images/Animation.png" />
                 </ribbon:RibbonGroup>
 
                 <ribbon:RibbonGroup Header="Operators">
@@ -83,8 +83,17 @@
                     <ribbon:RibbonButton Command="{Binding EffectHiddenLine}" x:Name="menuItemEffectHiddenLine" Label="Hidden Line" />
                     <ribbon:RibbonButton Command="{Binding EffectEyeDome}" x:Name="menuItemEffectEyeDome" Label="Eye Dome Lighting" />
                     <ribbon:RibbonButton Command="{Binding EffectReflection}" x:Name="menuItemEffectReflection" Label="Reflection" />
-
                 </ribbon:RibbonGroup>
+
+                <ribbon:RibbonGroup Header="Background">
+                    <ribbon:RibbonGroup.GroupSizeDefinitions>
+                        <ribbon:RibbonGroupSizeDefinition>
+                            <ribbon:RibbonControlSizeDefinition ImageSize="Large" IsLabelVisible="True" />
+                        </ribbon:RibbonGroupSizeDefinition>
+                    </ribbon:RibbonGroup.GroupSizeDefinitions>
+                    <ribbon:RibbonButton Click="menuItemBackground_Click" x:Name="menuItemVisBackground"  Label="Background" LargeImageSource="pack://application:,,,/Images/PictureAndText.png" />
+                </ribbon:RibbonGroup>
+
             </ribbon:RibbonTab>
 
 
@@ -98,9 +107,9 @@
                         </ribbon:RibbonGroupSizeDefinition>
                     </ribbon:RibbonGroup.GroupSizeDefinitions>
 
-                    <ribbon:RibbonButton x:Name="menuItemSimRun"  Label="Run" Click="menuItemSimRun_Click" />
-                    <ribbon:RibbonButton x:Name="menuItemSimOpenOutFile"  Label="Open Result File" Click="menuItemSimOpenOutFile_Click"/>
-                    <ribbon:RibbonButton x:Name="menuItemSimImportResults"  Label="Import Results" Click="menuItemSimImportResults_Click" />
+                    <ribbon:RibbonButton x:Name="menuItemSimRun" Label="Run" Click="menuItemSimRun_Click" LargeImageSource="pack://application:,,,/Images/Run.png" />
+                    <ribbon:RibbonButton x:Name="menuItemSimOpenOutFile"  Label="Open Result File" Click="menuItemSimOpenOutFile_Click" LargeImageSource="pack://application:,,,/Images/ResultsToGrid.png" />
+                    <ribbon:RibbonButton x:Name="menuItemSimImportResults"  Label="Import Results" Click="menuItemSimImportResults_Click" LargeImageSource="pack://application:,,,/Images/OpenPerformanceResult.png" />
                 </ribbon:RibbonGroup>
             </ribbon:RibbonTab>
 
@@ -117,13 +126,13 @@
                             <ribbon:RibbonControlSizeDefinition ImageSize="Large" IsLabelVisible="True" />
                         </ribbon:RibbonGroupSizeDefinition>
                     </ribbon:RibbonGroup.GroupSizeDefinitions>
-                    <ribbon:RibbonButton x:Name="menuItemFstSimCon"  Label="Simulation Control" Click="menuItemFstSimCon_Click" />
-                    <ribbon:RibbonButton x:Name="menuItemFstFeature"  Label="Feature Switches and Flags" Click="menuItemFstFeature_Click" />
-                    <ribbon:RibbonButton x:Name="menuItemFstEnvCon"  Label="Environmental Conditions" Click="menuItemFstEnvCon_Click" />
-                    <ribbon:RibbonButton x:Name="menuItemFstInputFiles"  Label="Input Files" Click="menuItemFstInputFiles_Click" />
-                    <ribbon:RibbonButton x:Name="menuItemFstOutput"  Label="Output" Click="menuItemFstOutput_Click" />
-                    <ribbon:RibbonButton x:Name="menuItemFstLinear"  Label="Linearization" Click="menuItemFstLinear_Click" />
-                    <ribbon:RibbonButton x:Name="menuItemFstVisual"  Label="Visualization" Click="menuItemFstVisual_Click" />
+                    <ribbon:RibbonButton x:Name="menuItemFstSimCon"  Label="Simulation Control" Click="menuItemFstSimCon_Click" LargeImageSource="pack://application:,,,/Images/ServiceController.png" />
+                    <ribbon:RibbonButton x:Name="menuItemFstFeature"  Label="Feature Switches and Flags" Click="menuItemFstFeature_Click" LargeImageSource="pack://application:,,,/Images/FlagGreen.png" />
+                    <ribbon:RibbonButton x:Name="menuItemFstEnvCon"  Label="Environmental Conditions" Click="menuItemFstEnvCon_Click" LargeImageSource="pack://application:,,,/Images/FluidLayout.png" />
+                    <ribbon:RibbonButton x:Name="menuItemFstInputFiles"  Label="Input Files" Click="menuItemFstInputFiles_Click" LargeImageSource="pack://application:,,,/Images/DocumentCollection.png" />
+                    <ribbon:RibbonButton x:Name="menuItemFstOutput"  Label="Output" Click="menuItemFstOutput_Click" LargeImageSource="pack://application:,,,/Images/Output.png" />
+                    <ribbon:RibbonButton x:Name="menuItemFstLinear"  Label="Linearization" Click="menuItemFstLinear_Click" LargeImageSource="pack://application:,,,/Images/AssociationRelationship.png" />
+                    <ribbon:RibbonButton x:Name="menuItemFstVisual"  Label="Visualization" Click="menuItemFstVisual_Click" LargeImageSource="pack://application:,,,/Images/vtk.png" />
                 </ribbon:RibbonGroup>
             </ribbon:RibbonTab>
 
@@ -133,9 +142,11 @@
                     <ribbon:RibbonGroup.GroupSizeDefinitions>
                         <ribbon:RibbonGroupSizeDefinition>
                             <ribbon:RibbonControlSizeDefinition ImageSize="Small" IsLabelVisible="True" />
+                            <ribbon:RibbonControlSizeDefinition ImageSize="Large" IsLabelVisible="True" />
                         </ribbon:RibbonGroupSizeDefinition>
                     </ribbon:RibbonGroup.GroupSizeDefinitions>
                     <ribbon:RibbonButton Command="{Binding VisHD}" x:Name="menuItemVisHD"  Label="Hide/Show HD" />
+                    <ribbon:RibbonButton x:Name="menuItemMaterialHD"  Label="Apply Materials" Click="menuItemMaterialHD_Click" />
                 </ribbon:RibbonGroup>
             </ribbon:RibbonTab>
 

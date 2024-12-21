@@ -240,7 +240,6 @@ namespace HoopsFast
                 ctrl.Canvas.GetFrontView().ComputeFitWorldCamera(out fitWorldCamera);
                 ctrl.Canvas.GetFrontView().SmoothTransition(fitWorldCamera);
 
-
                 GetCanvas().Update();
             }
         }
@@ -282,10 +281,6 @@ namespace HoopsFast
 
             base.OnClosed(e);
         }
-
-
-
-
 
         private GeneralCommand _exitCommand;
         private Visualize _newVisualize;
@@ -672,6 +667,32 @@ namespace HoopsFast
             GetSprocketsControl().Canvas.Update();
         }
 
+        private void menuItemMaterialHD_Click(object sender, RoutedEventArgs e)
+        {
+            PostProcess.MaterialSettings materialSettings = new PostProcess.MaterialSettings(Hoops.HDKey);
+            materialSettings.ShowDialog();
+        }
 
+        private void menuItemBackground_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Image files (*.jpg, *.jpeg, *.png)|*.jpg;*.jpeg;*.png";
+            if (openFileDialog.ShowDialog() == true)
+            {
+                string file_in = openFileDialog.FileName;
+
+                HPS.ImageKit imageKit = new HPS.ImageKit();
+                HPS.Image.ImportOptionsKit importOptionsKit = new HPS.Image.ImportOptionsKit();
+                importOptionsKit.SetFormat(HPS.Image.Format.Jpeg);
+                imageKit = HPS.Image.File.Import(file_in, importOptionsKit);
+
+                HPS.PortfolioKey pKey = HPS.Database.CreatePortfolio();
+                HPS.ImageDefinition imageDefinition = pKey.DefineImage("my_image", imageKit);
+
+                GetCanvas().GetWindowKey().GetPortfolioControl().Push(pKey);
+                GetCanvas().GetWindowKey().GetSubwindowControl().SetBackground(HPS.Subwindow.Background.Image, imageDefinition.Name());
+                GetCanvas().Update();
+            }
+        }
     }
 }

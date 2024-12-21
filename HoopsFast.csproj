@@ -16,6 +16,7 @@
     <None Remove="Images\FluidLayout.png" />
     <None Remove="Images\OpenPerformanceResult.png" />
     <None Remove="Images\Output.png" />
+    <None Remove="Images\PictureAndText.png" />
     <None Remove="Images\ResultsToGrid.png" />
     <None Remove="Images\Run.png" />
     <None Remove="Images\ServiceController.png" />
@@ -41,6 +42,7 @@
     <Resource Include="Images\FluidLayout.png" />
     <Resource Include="Images\OpenPerformanceResult.png" />
     <Resource Include="Images\Output.png" />
+    <Resource Include="Images\PictureAndText.png" />
     <Resource Include="Images\ResultsToGrid.png" />
     <Resource Include="Images\Run.png" />
     <Resource Include="Images\ServiceController.png" />
