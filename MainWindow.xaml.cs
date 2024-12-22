@@ -240,6 +240,8 @@ namespace HoopsFast
                 ctrl.Canvas.GetFrontView().ComputeFitWorldCamera(out fitWorldCamera);
                 ctrl.Canvas.GetFrontView().SmoothTransition(fitWorldCamera);
 
+                ctrl.Canvas.GetFrontView().GetNavigationCubeControl().SetVisibility(true).SetInteractivity(true);
+
                 GetCanvas().Update();
             }
         }
