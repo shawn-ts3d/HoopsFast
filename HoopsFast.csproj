@@ -20,6 +20,7 @@
     <None Remove="Images\ResultsToGrid.png" />
     <None Remove="Images\Run.png" />
     <None Remove="Images\ServiceController.png" />
+    <None Remove="Images\TS3D-Fav.ico" />
     <None Remove="Images\vtk.png" />
     <None Remove="Resources\OutListParameters.xlsx" />
   </ItemGroup>
@@ -46,6 +47,7 @@
     <Resource Include="Images\ResultsToGrid.png" />
     <Resource Include="Images\Run.png" />
     <Resource Include="Images\ServiceController.png" />
+    <Resource Include="Images\TS3D-Fav.ico" />
     <Resource Include="Images\vtk.png" />
     <Resource Include="Resources\OutListParameters.xlsx" />
   </ItemGroup>
@@ -79,6 +81,33 @@
     <Reference Include="hps_cs_sprk_ops">
       <HintPath>..\HOOPS_Visualize_2023_SP2\bin\win64_v142d\hps_cs_sprk_ops.dll</HintPath>
     </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Properties\Settings.Designer.cs">
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
   </ItemGroup>
 
 </Project>
