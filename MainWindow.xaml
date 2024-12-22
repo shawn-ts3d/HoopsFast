@@ -40,6 +40,8 @@
                     <ribbon:RibbonSeparator />
                     <ribbon:RibbonApplicationMenuItem x:Name="menuItemExportHsf" Header="Export HSF" Click="menuItemExportHsf_Click" />
                     <ribbon:RibbonSeparator />
+                    <ribbon:RibbonApplicationMenuItem x:Name="menuItemLicense" Header="License" />
+                    <ribbon:RibbonSeparator />
                     <ribbon:RibbonApplicationMenuItem x:Name="menuItemFileExit" Header="E_xit" Command="{Binding ExitCommand}"/>
                 </ribbon:RibbonApplicationMenu>
             </ribbon:Ribbon.ApplicationMenu>
