@@ -6,7 +6,9 @@
         xmlns:local="clr-namespace:HoopsFast.PostProcess"
         
         mc:Ignorable="d"
-        Title="FstOutResults" Height="477" Width="800">
+        Title="FstOutResults" Height="477" Width="800"
+        Icon="pack://application:,,,/Images/TS3D-Fav.ico">
+    
     <Grid>
 
         <DataGrid Height="384" HorizontalAlignment="Left" Margin="12,21,0,0" x:Name="dataGridOutResults" VerticalAlignment="Top">

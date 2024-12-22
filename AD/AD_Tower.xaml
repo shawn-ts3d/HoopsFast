@@ -5,7 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HoopsFast.AD"
         mc:Ignorable="d"
-        Title="AD_Tower" Height="450" Width="350" WindowStyle="ToolWindow">
+        Title="AD_Tower" Height="450" Width="350" WindowStyle="ToolWindow"
+        Icon="pack://application:,,,/Images/TS3D-Fav.ico">
+    
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*" />

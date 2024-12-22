@@ -5,7 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HoopsFast.AD"
         mc:Ignorable="d"
-        Title="AD_GeneralOptions" Height="450" Width="800">
+        Title="AD_GeneralOptions" Height="450" Width="800"
+        Icon="pack://application:,,,/Images/TS3D-Fav.ico">
+    
     <Grid>
         <StackPanel Margin="10">
             <Label FontWeight="Bold">General Options</Label>

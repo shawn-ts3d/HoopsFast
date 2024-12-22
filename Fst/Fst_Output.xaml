@@ -5,7 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HoopsFast.Fst"
         mc:Ignorable="d"
-        Title="OUTPUT" Height="300" Width="1200">
+        Title="OUTPUT" Height="300" Width="1200"
+        Icon="pack://application:,,,/Images/TS3D-Fav.ico">
+    
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="auto" />

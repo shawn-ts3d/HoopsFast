@@ -6,7 +6,9 @@
         xmlns:local="clr-namespace:HoopsFast.PostProcess"
         xmlns:ScottPlot="clr-namespace:ScottPlot.WPF;assembly=ScottPlot.WPF"
         mc:Ignorable="d"
-        Title="Plot" Height="450" Width="800">
+        Title="Plot" Height="450" Width="800"
+        Icon="pack://application:,,,/Images/TS3D-Fav.ico">
+    
     <Grid>
         <ScottPlot:WpfPlot x:Name="WpfPlot1" />
     </Grid>
