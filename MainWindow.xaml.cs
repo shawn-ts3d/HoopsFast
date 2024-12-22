@@ -145,10 +145,9 @@ namespace HoopsFast
             {
                 Hoops.CreateNewHoopsModel();
 
-
                 FstModel fstModel = new FstModel();
                 FstInput fstInput = new FstInput();
-                NewVisualize.Execute(this);
+                
 
                 Fast.fileName_fst = openD.FileName;
                 fstModel.filePath = System.IO.Path.GetDirectoryName(openD.FileName);   //may not be needed, check
@@ -160,6 +159,7 @@ namespace HoopsFast
                 Fast.oneTurbine = new TurbineData();
                 Fast.oneTurbine.fst.ParseFstInput(Fast.fileName_fst, Fast.status);
 
+                NewVisualize.Execute(this);
 
                 menuTabSimulate.Visibility = Visibility.Visible;
                 menuTabVis.Visibility = Visibility.Visible;
@@ -253,8 +253,15 @@ namespace HoopsFast
             if (Hoops.Model != null)
             {
                 Hoops.Model.Delete();
-            }             
-            Hoops.Model = HPS.Factory.CreateModel();
+            }
+            if (Fast.oneTurbine != null)
+            {
+                Hoops.Model = HPS.Factory.CreateModel(System.IO.Path.GetFileNameWithoutExtension(Fast.oneTurbine.fst.fileName));
+            }
+            else
+            {
+                Hoops.Model = HPS.Factory.CreateModel();
+            }
             Hoops.DefaultCamera = null;
         }
 
@@ -599,6 +606,7 @@ namespace HoopsFast
         {
             Microsoft.Win32.SaveFileDialog dlg = new Microsoft.Win32.SaveFileDialog();
             dlg.Filter = "HSF|*.hsf";
+            dlg.FileName = System.IO.Path.GetFileNameWithoutExtension(Fast.oneTurbine.fst.fileName);
             dlg.ShowDialog();
             if (dlg.FileName != "")
             {

@@ -50,12 +50,10 @@ namespace HoopsFast
             MDKey = MDLinesKey = null;
         }
 
-
-
-
         public static void CreateHDModel(TurbineData oneTurbine)
         {
             HDKey = Model.GetSegmentKey().Subsegment();
+            HDKey.SetName("HydroDyn");
 
             if (HDJointsKey == null)
             {
@@ -79,6 +77,7 @@ namespace HoopsFast
         private static void CreateHDJoints(TurbineData oneTurbine)
         {
             HDJointsKey = HDKey.Subsegment();
+            HDJointsKey.SetName("HydroDyn Joints");
 
             for (int i = 0; i < oneTurbine.HD.NJoints.value.Count - 1; i++)
             {
@@ -110,6 +109,7 @@ namespace HoopsFast
         private static void CreateHDMembers(TurbineData oneTurbine)
         {
             HDMembersKey = HDKey.Subsegment();
+            HDMembersKey.SetName("HydroDyn Members");
 
             for (int i = 0; i < oneTurbine.HD.NMembers.value.Count; i++)
             {
@@ -142,6 +142,7 @@ namespace HoopsFast
         public static void CreateADModel(TurbineData oneTurbine)
         {
             ADKey = Model.GetSegmentKey().Subsegment();
+            ADKey.SetName("AeroDyn");
 
             if (ADTowerKey == null)
             {
@@ -157,6 +158,8 @@ namespace HoopsFast
         private static void CreateADTower(TurbineData oneTurbine)
         {
             ADTowerKey = ADKey.Subsegment();
+            ADTowerKey.SetName("AeroDyn Tower");
+
             HPS.CylinderKit cylinderKit = new HPS.CylinderKit();
             HPS.Point[] points = new HPS.Point[oneTurbine.AD.NumTwrNds.value.Count];
             float[] radii = new float[oneTurbine.AD.NumTwrNds.value.Count];
@@ -178,6 +181,7 @@ namespace HoopsFast
         private static void CreateADBlades(TurbineData oneTurbine)
         {
             ADBladeKey = ADKey.Subsegment();
+            ADBladeKey.SetName("AeroDyn Blade 1");
 
             List<HPS.Point[]> PointArray = new List<HPS.Point[]>();
 
@@ -214,6 +218,7 @@ namespace HoopsFast
             if (oneTurbine.AD.ADBlFile2.value == oneTurbine.AD.ADBlFile1.value)
             {
                 ADBladeKey2 = ADKey.Subsegment();
+                ADBladeKey2.SetName("AeroDyn Blade 2");
                 ADBladeKey.CopyTo(ADBladeKey2);
             }
             else
@@ -224,6 +229,7 @@ namespace HoopsFast
             if (oneTurbine.AD.ADBlFile3.value == oneTurbine.AD.ADBlFile1.value)
             {
                 ADBladeKey3 = ADKey.Subsegment();
+                ADBladeKey3.SetName("AeroDyn Blade 3");
                 ADBladeKey.CopyTo(ADBladeKey3);
             }
             else
@@ -275,6 +281,7 @@ namespace HoopsFast
         public static void CreateEDModel(TurbineData oneTurbine)
         {
             EDKey = Model.GetSegmentKey().Subsegment();
+            EDKey.SetName("ElastoDyn");
 
             if (EDRotorKey == null)
             {
@@ -289,6 +296,7 @@ namespace HoopsFast
         private static void CreateEDRotor(TurbineData oneTurbine)
         {
             EDRotorKey = EDKey.Subsegment();
+            EDRotorKey.SetName("ElastoDyn Rotor");
             var twrTopNode = oneTurbine.AD.NumTwrNds.value.ElementAt(oneTurbine.AD.NumTwrNds.value.Count - 1);
 
             //naccalle
@@ -346,6 +354,7 @@ namespace HoopsFast
         public static void CreateSDModel(TurbineData oneTurbine)
         {
             SDKey = Model.GetSegmentKey().Subsegment();
+            SDKey.SetName("SubDyn");
 
             if (SDJointsKey == null)
             {
@@ -362,6 +371,7 @@ namespace HoopsFast
         private static void CreateSDJoints(TurbineData oneTurbine)
         {
             SDJointsKey = SDKey.Subsegment();
+            SDJointsKey.SetName("SubDyn Joints");
 
             for (int i = 0; i < oneTurbine.SD.NJoints.value.Count - 1; i++)
             {
@@ -382,6 +392,7 @@ namespace HoopsFast
         private static void CreateSDMembers(TurbineData oneTurbine)
         {
             SDMembersKey = SDKey.Subsegment();
+            SDMembersKey.SetName("SubDyn Members");
 
             for (int i = 0; i < oneTurbine.SD.NMembers.value.Count; i++)
             {
@@ -414,6 +425,7 @@ namespace HoopsFast
         public static void CreateMDModel(TurbineData oneTurbine)
         {
             MDKey = Model.GetSegmentKey().Subsegment();
+            MDKey.SetName("MooringDyn");
 
             if (MDLinesKey == null)
             {
@@ -428,6 +440,7 @@ namespace HoopsFast
         private static void CreateMDLines(TurbineData oneTurbine)
         {
             MDLinesKey = MDKey.Subsegment();
+            MDLinesKey.SetName("MooringDyn Lines");
 
             foreach (var item in oneTurbine.MD.NLines_values)
             {
