@@ -32,6 +32,7 @@ namespace HoopsFast.PostProcess
                 var signal = WpfPlot1.Plot.Add.Scatter(dataX, dataY[i]);              
                 signal.LegendText = names[i] + " " + units[i];
                 signal.MarkerSize = 0;
+                signal.LineWidth = 2;
             }
 
             WpfPlot1.Refresh();
