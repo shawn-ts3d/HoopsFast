@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ScottPlot;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,14 +20,20 @@ namespace HoopsFast.PostProcess
     /// </summary>
     public partial class Plot : Window
     {
-        public Plot(List<double> dataX, List<List<double>> dataY)
+        public Plot(List<string> names, List<string> units, List<double> dataX, List<List<double>> dataY)
         {
             InitializeComponent();
 
-            foreach (var data in dataY)
+            WpfPlot1.Plot.XLabel("Time (s)", 24);
+            WpfPlot1.Plot.YLabel("Value", 24);
+
+            for (int i = 0; i < dataY.Count; i++)
             {
-                WpfPlot1.Plot.Add.Scatter(dataX, data, WpfPlot1.Plot.Add.GetNextColor());
+                var signal = WpfPlot1.Plot.Add.Scatter(dataX, dataY[i]);              
+                signal.LegendText = names[i] + " " + units[i];
+                signal.MarkerSize = 0;
             }
+
             WpfPlot1.Refresh();
         }
     }

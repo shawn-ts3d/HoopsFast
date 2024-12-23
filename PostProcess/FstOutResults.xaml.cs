@@ -157,16 +157,20 @@ namespace HoopsFast.PostProcess
         {
             List<double> timeData = values["Time"];
             List<List<double>> data = new List<List<double>>();
+            List<string> parameterNames = new List<string>();
+            List<string> parameterUnits = new List<string>();
 
             foreach (var parameter in listOutParameters)
             {
                 if (parameter.selected && parameter.name != "Time")
                 {
                     data.Add(values[parameter.name]);
+                    parameterNames.Add(parameter.name);
+                    parameterUnits.Add(parameter.unit);
                 }
             }
 
-            Plot onePlot = new Plot(timeData, data);
+            Plot onePlot = new Plot(parameterNames, parameterUnits, timeData, data);
             onePlot.ShowDialog();
         }
     }

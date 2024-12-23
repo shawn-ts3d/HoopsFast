@@ -8,10 +8,16 @@
         mc:Ignorable="d"
         Title="FstOutResults" Height="477" Width="800"
         Icon="pack://application:,,,/Images/TS3D-Fav.ico">
-    
-    <Grid>
 
-        <DataGrid Height="384" HorizontalAlignment="Left" Margin="12,21,0,0" x:Name="dataGridOutResults" VerticalAlignment="Top">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Button x:Name="btnPlot" Content="Plot" HorizontalAlignment="Left" Click="btnPlot_Click" Height="33" Width="90" Grid.Row="0" Margin="10" />
+
+        <DataGrid HorizontalAlignment="Left" Margin="12,0,0,0" x:Name="dataGridOutResults" VerticalAlignment="Top" Grid.Row="1">
             <!--<DataGrid.Columns>
                 <DataGridCheckBoxColumn Header="Selected" Binding="{Binding selected}" />
                 <DataGridTextColumn Header="Name" Binding="{Binding name}"/>
@@ -19,11 +25,6 @@
                 <DataGridTextColumn Header="Description" Binding="{Binding description}"/>
             </DataGrid.Columns>-->
         </DataGrid>
-
-        <Button x:Name="btnPlot" Content="Plot" HorizontalAlignment="Left" Margin="617,32,0,0" VerticalAlignment="Top" RenderTransformOrigin="16.447,-18.681" Height="33" Width="90" Click="btnPlot_Click"/>
-
-        
-
 
     </Grid>
 </Window>

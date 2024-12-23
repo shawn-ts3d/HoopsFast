@@ -58,9 +58,9 @@
     <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
     <PackageReference Include="Microsoft.Windows.Compatibility" Version="8.0.4" />
     <PackageReference Include="RibbonControlsLibrary" Version="4.0.0" />
-    <PackageReference Include="ScottPlot" Version="5.0.25" />
-    <PackageReference Include="ScottPlot.WPF" Version="5.0.25" />
-    <PackageReference Include="SkiaSharp.Views.WPF" Version="2.88.8" />
+    <PackageReference Include="ScottPlot" Version="5.0.47" />
+    <PackageReference Include="ScottPlot.WPF" Version="5.0.47" />
+    <PackageReference Include="SkiaSharp.Views.WPF" Version="3.116.1" />
     <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
   </ItemGroup>
 
