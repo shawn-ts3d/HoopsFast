@@ -154,7 +154,6 @@
             </ribbon:RibbonTab>
 
 
-
             <ribbon:RibbonTab x:Name="menuTabAD" Header="AeroDyn" Visibility="Hidden">
                 <ribbon:RibbonGroup Header="AD">
                     <ribbon:RibbonGroup.GroupSizeDefinitions>
@@ -165,13 +164,13 @@
                     <ribbon:RibbonButton Command="{Binding VisAD}" x:Name="menuItemVisAD"  Label="Hide/Show AD" />
                     <ribbon:RibbonButton Command="{Binding VisBlade}" x:Name="menuItemVisBlade"  Label="Only show blade" />
                 </ribbon:RibbonGroup>
-                <ribbon:RibbonGroup Header="AD_GeneralOptions">
+                <ribbon:RibbonGroup Header="AD_Inputs">
                     <ribbon:RibbonGroup.GroupSizeDefinitions>
                         <ribbon:RibbonGroupSizeDefinition>
-                            <ribbon:RibbonControlSizeDefinition ImageSize="Large" IsLabelVisible="True" />
+                            <ribbon:RibbonControlSizeDefinition ImageSize="Small" IsLabelVisible="True" />
                         </ribbon:RibbonGroupSizeDefinition>
                     </ribbon:RibbonGroup.GroupSizeDefinitions>
-                    <ribbon:RibbonButton x:Name="menuItemADGeneral"  Label="General Options" Click="menuItemADGeneral_Click" />
+                    <ribbon:RibbonButton x:Name="menuItemADGeneral"  Label="General Options" Click="menuItemADGeneral_Click" SmallImageSource="pack://application:,,,/Images/settings.png"/>
                 </ribbon:RibbonGroup>
                 <ribbon:RibbonGroup Header="AD_Tower">
                     <ribbon:RibbonGroup.GroupSizeDefinitions>

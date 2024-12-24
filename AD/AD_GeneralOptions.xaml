@@ -9,25 +9,79 @@
         Icon="pack://application:,,,/Images/TS3D-Fav.ico">
     
     <Grid>
-        <StackPanel Margin="10">
-            <Label FontWeight="Bold">General Options</Label>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="10*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
 
-            <CheckBox x:Name="chkEcho">Echo</CheckBox>
-            <DockPanel>
-                <Label Content="DTAero:"/>
-                <TextBox Text="{Binding Value, StringFormat=N2}"/>
-            </DockPanel>
+        <Label x:Name="lblADEcho" Grid.Row="0" Grid.Column="0"/>
+        <CheckBox x:Name="chkADEcho_value" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <Label x:Name="lblADEcho_description" Grid.Row="0" Grid.Column="2"/>
 
-            <DockPanel>
-                <Label Content="WakeMod:"/>
-                <TextBox Text="{Binding Value, StringFormat=N2}"/>
-            </DockPanel>
+        <Label x:Name="lblADDTAero" Grid.Row="1" Grid.Column="0"/>
+        <TextBox x:Name="txtADDTAero_value" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center"/>
+        <Label x:Name="lblADDTAero_description" Grid.Row="1" Grid.Column="2"/>
 
-            <DockPanel>
-                <Label Content="AFAeroMod:"/>
-                <TextBox Text="{Binding Value, StringFormat=N2}"/>
-            </DockPanel>
-        </StackPanel>
+        <Label x:Name="lblADWakeMod" Grid.Row="2" Grid.Column="0"/>
+        <ComboBox x:Name="cboADWakeMod_value" Grid.Row="2" Grid.Column="1"/>
+        <Label x:Name="lblADWakeMod_description" Grid.Row="2" Grid.Column="2"/>
+
+        <Label x:Name="lblADAFAeroMod" Grid.Row="3" Grid.Column="0"/>
+        <ComboBox x:Name="cboADAFAeroMod_value" Grid.Row="3" Grid.Column="1"/>
+        <Label x:Name="lblADAFAeroMod_description" Grid.Row="3" Grid.Column="2"/>
+
+        <Label x:Name="lblADTwrPotent" Grid.Row="4" Grid.Column="0"/>
+        <ComboBox x:Name="cboADTwrPotent_value" Grid.Row="4" Grid.Column="1"/>
+        <Label x:Name="lblADTwrPotent_description" Grid.Row="4" Grid.Column="2"/>
+
+        <Label x:Name="lblADTwrShadow" Grid.Row="5" Grid.Column="0"/>
+        <ComboBox x:Name="cboADTwrShadow_value" Grid.Row="5" Grid.Column="1"/>
+        <Label x:Name="lblADTwrShadow_description" Grid.Row="5" Grid.Column="2"/>
+
+        <Label x:Name="lblADTwrAero" Grid.Row="6" Grid.Column="0"/>
+        <CheckBox x:Name="chkADTwrAero_value" Grid.Row="6" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Label x:Name="lblADTwrAero_description" Grid.Row="6" Grid.Column="2"/>
+
+        <Label x:Name="lblADFrozenWake" Grid.Row="7" Grid.Column="0"/>
+        <CheckBox x:Name="chkADFrozenWake_value" Grid.Row="7" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <Label x:Name="lblADFrozenWake_description" Grid.Row="7" Grid.Column="2"/>
+
+        <Label x:Name="lblADCavitCheck" Grid.Row="8" Grid.Column="0"/>
+        <CheckBox x:Name="chkADCavitCheck_value" Grid.Row="8" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <Label x:Name="lblADCavitCheck_description" Grid.Row="8" Grid.Column="2"/>
+
+        <Label x:Name="lblADBuoyancy" Grid.Row="9" Grid.Column="0"/>
+        <CheckBox x:Name="chkADBuoyancy_value" Grid.Row="9" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <Label x:Name="lblADBuoyancy_description" Grid.Row="9" Grid.Column="2"/>
+
+        <Label x:Name="lblADCompAA" Grid.Row="10" Grid.Column="0"/>
+        <CheckBox x:Name="chkADCompAA_value" Grid.Row="10" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <Label x:Name="lblADCompAA_description" Grid.Row="10" Grid.Column="2"/>
+
+        <Label x:Name="lblADAA_InputFile" Grid.Row="11" Grid.Column="0"/>
+        <TextBox x:Name="txtADAA_InputFile_value" Grid.Row="11" Grid.Column="1" VerticalAlignment="Center"/>
+        <Label x:Name="lblADAA_InputFile_description" Grid.Row="11" Grid.Column="2"/>
+
+
+        <Button x:Name="btnOK" Content="OK" Grid.Row="13" Grid.Column="0" Margin="10,5,10,5" Click="btnOK_Click" MaxWidth="100"/>
+        <Button x:Name="btnCancel" Content="Cancel" Grid.Row="13" Grid.Column="1" Margin="10,5,10,5" Click="btnCancel_Click" MaxWidth="100"/>
 
     </Grid>
 </Window>

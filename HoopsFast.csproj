@@ -20,6 +20,7 @@
     <None Remove="Images\ResultsToGrid.png" />
     <None Remove="Images\Run.png" />
     <None Remove="Images\ServiceController.png" />
+    <None Remove="Images\Settings.png" />
     <None Remove="Images\TS3D-Fav.ico" />
     <None Remove="Images\vtk.png" />
     <None Remove="Resources\OutListParameters.xlsx" />
@@ -47,6 +48,7 @@
     <Resource Include="Images\ResultsToGrid.png" />
     <Resource Include="Images\Run.png" />
     <Resource Include="Images\ServiceController.png" />
+    <Resource Include="Images\Settings.png" />
     <Resource Include="Images\TS3D-Fav.ico" />
     <Resource Include="Images\vtk.png" />
     <Resource Include="Resources\OutListParameters.xlsx" />
