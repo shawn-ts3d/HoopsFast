@@ -190,7 +190,7 @@ namespace HoopsFast
                 PointArray.Add(GetPointArray(
                     oneTurbine.AD.AFfilesInput.value[(int)oneTurbine.AD.ADBlInput1.NumBlNds.value[i][6]-1], 
                     (float)oneTurbine.AD.ADBlInput1.NumBlNds.value[i][5],
-                    (float)oneTurbine.AD.ADBlInput1.NumBlNds.value[i][0]));
+                    (float)oneTurbine.AD.ADBlInput1.NumBlNds.value[i][0] + (float)oneTurbine.ED.HubRad.value));
             }
 
             for (int k = 0; k < PointArray.Count - 1; k++)
@@ -238,20 +238,20 @@ namespace HoopsFast
             }
 
             ADBladeKey.GetModellingMatrixControl().Translate(
-                (float)(oneTurbine.ED.NacCMxn.value * 2.0 + oneTurbine.ED.HubRad.value), 
-                0.0f, 
+                (float)(oneTurbine.ED.NacCMxn.value * 2.0 + oneTurbine.ED.HubRad.value + CalculateBladeTranslate(oneTurbine)),
+                0.0f,
                 (float)(oneTurbine.ED.TowerHt.value + oneTurbine.ED.NacCMzn.value));
 
             vector = new HPS.Vector(1.0f, 0.0f, 0.0f);
             ADBladeKey2.GetModellingMatrixControl().RotateOffAxis(vector, 120.0f);
             ADBladeKey2.GetModellingMatrixControl().Translate(
-               (float)(oneTurbine.ED.NacCMxn.value * 2.0 + oneTurbine.ED.HubRad.value), 
+               (float)(oneTurbine.ED.NacCMxn.value * 2.0 + oneTurbine.ED.HubRad.value) + CalculateBladeTranslate(oneTurbine), 
                 0.0f,
                 (float)(oneTurbine.ED.TowerHt.value + oneTurbine.ED.NacCMzn.value));
 
             ADBladeKey3.GetModellingMatrixControl().RotateOffAxis(vector, -120.0f);
             ADBladeKey3.GetModellingMatrixControl().Translate(
-               (float)(oneTurbine.ED.NacCMxn.value * 2.0 + oneTurbine.ED.HubRad.value),
+               (float)(oneTurbine.ED.NacCMxn.value * 2.0 + oneTurbine.ED.HubRad.value) + CalculateBladeTranslate(oneTurbine),
                 0.0f,
                (float)(oneTurbine.ED.TowerHt.value + oneTurbine.ED.NacCMzn.value));
 
@@ -270,12 +270,21 @@ namespace HoopsFast
             //the last point is the same as the first one
             for (int i = 1; i < size-1; i++)
             {
-                float x = (float)af.NumCoords.value[i+1][0] * chord * 1.0f;
+                float x = (float)af.NumCoords.value[i+1][0] * chord * -1.0f;
                 float y = (float)af.NumCoords.value[i+1][1] * chord * 1.0f;
                 PointArray[i-1] = new HPS.Point(x, y, z);
             }
 
             return PointArray;
+        }
+
+        //calculate the x translate length for blades
+        private static float CalculateBladeTranslate(TurbineData oneTurbine)
+        {
+            var af = oneTurbine.AD.AFfilesInput.value[(int)oneTurbine.AD.ADBlInput1.NumBlNds.value[1][6] - 1];
+            var chord = (float)oneTurbine.AD.ADBlInput1.NumBlNds.value[1][5];
+
+            return (float)af.NumCoords.value[1 + 1][0] * chord * 1.0f;
         }
 
         public static void CreateEDModel(TurbineData oneTurbine)
