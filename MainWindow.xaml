@@ -168,9 +168,11 @@
                     <ribbon:RibbonGroup.GroupSizeDefinitions>
                         <ribbon:RibbonGroupSizeDefinition>
                             <ribbon:RibbonControlSizeDefinition ImageSize="Small" IsLabelVisible="True" />
+                            <ribbon:RibbonControlSizeDefinition ImageSize="Small" IsLabelVisible="True" />
                         </ribbon:RibbonGroupSizeDefinition>
                     </ribbon:RibbonGroup.GroupSizeDefinitions>
                     <ribbon:RibbonButton x:Name="menuItemADGeneral"  Label="General Options" Click="menuItemADGeneral_Click" SmallImageSource="pack://application:,,,/Images/settings.png"/>
+                    <ribbon:RibbonButton x:Name="menuItemADEnvCon"  Label="Environmental Conditions" Click="menuItemADEnvCon_Click" SmallImageSource="pack://application:,,,/Images/FluidLayout.png"/>
                 </ribbon:RibbonGroup>
                 <ribbon:RibbonGroup Header="AD_Tower">
                     <ribbon:RibbonGroup.GroupSizeDefinitions>

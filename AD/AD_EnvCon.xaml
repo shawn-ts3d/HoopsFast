@@ -1,0 +1,55 @@
+﻿<Window x:Class="HoopsFast.AD.AD_EnvCon"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HoopsFast.AD"
+        mc:Ignorable="d"
+        Title="AeroDyn Environmental Conditions" Height="250" Width="600"
+        Icon="pack://application:,,,/Images/TS3D-Fav.ico">
+    
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="10*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+
+        <Label x:Name="lblADAirDens" Grid.Row="0" Grid.Column="0"/>
+        <TextBox x:Name="txtADAirDens_value" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center"/>
+        <Label x:Name="lblADAirDens_description" Grid.Row="0" Grid.Column="2"/>
+
+        <Label x:Name="lblADKinVisc" Grid.Row="1" Grid.Column="0"/>
+        <TextBox x:Name="txtADKinVisc_value" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center"/>
+        <Label x:Name="lblADKinVisc_description" Grid.Row="1" Grid.Column="2"/>
+
+        <Label x:Name="lblADSpdSound" Grid.Row="2" Grid.Column="0"/>
+        <TextBox x:Name="txtADSpdSound_value" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center"/>
+        <Label x:Name="lblADSpdSound_description" Grid.Row="2" Grid.Column="2"/>
+
+        <Label x:Name="lblADPatm" Grid.Row="3" Grid.Column="0"/>
+        <TextBox x:Name="txtADPatm_value" Grid.Row="3" Grid.Column="1" VerticalAlignment="Center"/>
+        <Label x:Name="lblADPatm_description" Grid.Row="3" Grid.Column="2"/>
+
+        <Label x:Name="lblADPvap" Grid.Row="4" Grid.Column="0"/>
+        <TextBox x:Name="txtADPvap_value" Grid.Row="4" Grid.Column="1" VerticalAlignment="Center"/>
+        <Label x:Name="lblADPvap_description" Grid.Row="4" Grid.Column="2"/>
+
+
+        <Button x:Name="btnOK" Content="OK" Grid.Row="6" Grid.Column="0" Margin="10,5,10,5" Click="btnOK_Click" MaxWidth="100"/>
+        <Button x:Name="btnCancel" Content="Cancel" Grid.Row="6" Grid.Column="1" Margin="10,5,10,5" Click="btnCancel_Click" MaxWidth="100"/>
+
+
+
+    </Grid>
+</Window>

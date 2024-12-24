@@ -498,6 +498,12 @@ namespace HoopsFast
             AD_GeneralOptions.ShowDialog();
         }
 
+        private void menuItemADEnvCon_Click(object sender, RoutedEventArgs e)
+        {
+            AD.AD_EnvCon AD_EnvCon = new AD.AD_EnvCon();
+            AD_EnvCon.ShowDialog();
+        }
+
         private void menuItemFileSave_Click(object sender, RoutedEventArgs e)
         {
             Fast.oneTurbine.fst.WriteFstFile(Fast.oneTurbine.fst);
