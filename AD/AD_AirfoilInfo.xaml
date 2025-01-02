@@ -1,0 +1,68 @@
+﻿<Window x:Class="HoopsFast.AD.AD_AirfoilInfo"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HoopsFast.AD"
+        mc:Ignorable="d"
+        Title="AD_AirfoilInfo" Height="450" Width="800"
+        Icon="pack://application:,,,/Images/TS3D-Fav.ico">
+    
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="10*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="7*"></RowDefinition>
+            <RowDefinition></RowDefinition>
+
+        </Grid.RowDefinitions>
+
+
+        <Label x:Name="lblADAFTabMod" Grid.Row="0" Grid.Column="0"/>
+        <ComboBox x:Name="cboADAFTabMod_value" Grid.Row="0" Grid.Column="1"/>
+        <Label x:Name="lblADAFTabMod_description" Grid.Row="0" Grid.Column="2"/>
+
+        <Label x:Name="lblADInCol_Alfa" Grid.Row="1" Grid.Column="0"/>
+        <TextBox x:Name="txtADInCol_Alfa_value" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center"/>
+        <Label x:Name="lblADInCol_Alfa_description" Grid.Row="1" Grid.Column="2"/>
+
+        <Label x:Name="lblADInCol_Cl" Grid.Row="2" Grid.Column="0"/>
+        <TextBox x:Name="txtADInCol_Cl_value" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center"/>
+        <Label x:Name="lblADInCol_Cl_description" Grid.Row="2" Grid.Column="2"/>
+
+        <Label x:Name="lblADInCol_Cd" Grid.Row="3" Grid.Column="0"/>
+        <TextBox x:Name="txtADInCol_Cd_value" Grid.Row="3" Grid.Column="1" VerticalAlignment="Center"/>
+        <Label x:Name="lblADInCol_Cd_description" Grid.Row="3" Grid.Column="2"/>
+
+        <Label x:Name="lblADInCol_Cm" Grid.Row="4" Grid.Column="0"/>
+        <TextBox x:Name="txtADInCol_Cm_value" Grid.Row="4" Grid.Column="1" VerticalAlignment="Center"/>
+        <Label x:Name="lblADInCol_Cm_description" Grid.Row="4" Grid.Column="2"/>
+
+        <Label x:Name="lblADInCol_Cpmin" Grid.Row="5" Grid.Column="0"/>
+        <TextBox x:Name="txtADInCol_Cpmin_value" Grid.Row="5" Grid.Column="1" VerticalAlignment="Center"/>
+        <Label x:Name="lblADInCol_Cpmin_description" Grid.Row="5" Grid.Column="2"/>
+
+        <!--To be improved!! How to better show all the files.-->
+        <Label x:Name="lblADNumAFfiles" Grid.Row="6" Grid.Column="0" VerticalAlignment="Center"/>
+        <TextBox x:Name="txtADNumAFfiles_value" Grid.Row="6" Grid.Column="1" VerticalAlignment="Center" IsReadOnly="True" Background="Gray"/>
+        <Label x:Name="lblADNumAFfiles_description" Grid.Row="6" Grid.Column="2" >
+            <Label.Content>
+                <AccessText TextWrapping="Wrap" />
+            </Label.Content>
+        </Label>
+
+
+        <Button x:Name="btnOK" Content="OK" Grid.Row="13" Grid.Column="0" Margin="10,5,10,5" Click="btnOK_Click" MaxWidth="100"/>
+        <Button x:Name="btnCancel" Content="Cancel" Grid.Row="13" Grid.Column="1" Margin="10,5,10,5" Click="btnCancel_Click" MaxWidth="100"/>
+
+    </Grid>
+</Window>

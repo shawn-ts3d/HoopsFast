@@ -526,6 +526,12 @@ namespace HoopsFast
             //TODO
         }
 
+        private void menuItemADAirfoilInfo_Click(object sender, RoutedEventArgs e)
+        {
+            AD.AD_AirfoilInfo AD_AirfoilInfo = new AD.AD_AirfoilInfo();
+            AD_AirfoilInfo.ShowDialog();
+        }
+
         private void menuItemFileSave_Click(object sender, RoutedEventArgs e)
         {
             Fast.oneTurbine.fst.WriteFstFile(Fast.oneTurbine.fst);
