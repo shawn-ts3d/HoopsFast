@@ -510,6 +510,12 @@ namespace HoopsFast
             AD_BEMTOptions.ShowDialog();
         }
 
+        private void menuItemADDynamicBEMTOptions_Click(object sender, RoutedEventArgs e)
+        {
+            AD.AD_DynamicBEMTOptions AD_DynamicBEMTOptions = new AD.AD_DynamicBEMTOptions();
+            AD_DynamicBEMTOptions.ShowDialog();
+        }
+
         private void menuItemFileSave_Click(object sender, RoutedEventArgs e)
         {
             Fast.oneTurbine.fst.WriteFstFile(Fast.oneTurbine.fst);

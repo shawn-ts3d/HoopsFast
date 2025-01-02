@@ -1,0 +1,36 @@
+﻿<Window x:Class="HoopsFast.AD.AD_DynamicBEMTOptions"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HoopsFast.AD"
+        mc:Ignorable="d"
+        Title="AD_DynamicBEMTOptions" Height="150" Width="1200"
+        Icon="pack://application:,,,/Images/TS3D-Fav.ico">
+    
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1.5*" />
+            <ColumnDefinition Width="3*" />
+            <ColumnDefinition Width="10*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Label x:Name="lblADDBEMT_Mod" Grid.Row="0" Grid.Column="0"/>
+        <ComboBox x:Name="cboADDBEMT_Mod_value" Grid.Row="0" Grid.Column="1"/>
+        <Label x:Name="lblADDBEMT_Mod_description" Grid.Row="0" Grid.Column="2"/>
+
+        <Label x:Name="lblADtau1_const" Grid.Row="1" Grid.Column="0"/>
+        <TextBox x:Name="txtADtau1_const_value" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center"/>
+        <Label x:Name="lblADtau1_const_description" Grid.Row="1" Grid.Column="2"/>
+
+
+        <Button x:Name="btnOK" Content="OK" Grid.Row="3" Grid.Column="0" Margin="10,0,10,10" Click="btnOK_Click" MaxWidth="100" Height="20"/>
+        <Button x:Name="btnCancel" Content="Cancel" Grid.Row="3" Grid.Column="1" Margin="10,0,10,10" Click="btnCancel_Click" MaxWidth="100" Height="20"/>
+
+    </Grid>
+</Window>

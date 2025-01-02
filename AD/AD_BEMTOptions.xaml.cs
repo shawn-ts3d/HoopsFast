@@ -63,7 +63,6 @@ namespace HoopsFast.AD
             lblADMaxIter_description.Content = Fast.oneTurbine.AD.MaxIter.description;
         }
 
-
         private void btnOK_Click(object sender, RoutedEventArgs e)
         {
             //update inputs
