@@ -532,6 +532,13 @@ namespace HoopsFast
             AD_AirfoilInfo.ShowDialog();
         }
 
+        private void menuItemADBladeProp_Click(object sender, RoutedEventArgs e)
+        {
+            AD.AD_BladeProp AD_BladeProp = new AD.AD_BladeProp();
+            AD_BladeProp.ShowDialog();
+        }
+
+
         private void menuItemFileSave_Click(object sender, RoutedEventArgs e)
         {
             Fast.oneTurbine.fst.WriteFstFile(Fast.oneTurbine.fst);

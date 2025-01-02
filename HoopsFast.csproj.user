@@ -13,6 +13,9 @@
     <Compile Update="AD\AD_BEMTOptions.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="AD\AD_BladeProp.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="AD\AD_DynamicBEMTOptions.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -61,6 +64,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="AD\AD_BEMTOptions.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="AD\AD_BladeProp.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="AD\AD_DynamicBEMTOptions.xaml">

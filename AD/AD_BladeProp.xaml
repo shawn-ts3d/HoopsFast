@@ -1,0 +1,58 @@
+﻿<Window x:Class="HoopsFast.AD.AD_BladeProp"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HoopsFast.AD"
+        mc:Ignorable="d"
+        Title="AD_BladeProp" Height="200" Width="800"
+        Icon="pack://application:,,,/Images/TS3D-Fav.ico">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="4*" />
+            <ColumnDefinition Width="10*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Label x:Name="lblADUseBlCm" Grid.Row="0" Grid.Column="0"/>
+        <CheckBox x:Name="chkADUseBlCm_value" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <Label x:Name="lblADUseBlCm_description" Grid.Row="0" Grid.Column="2"/>
+
+        <Label x:Name="lblADADBlFile1" Grid.Row="1" Grid.Column="0"/>
+        <TextBox x:Name="txtADADBlFile1_value" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" IsReadOnly="True">
+            <TextBox.Background>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlLightColorKey}}"/>
+            </TextBox.Background>
+        </TextBox>
+        <Label x:Name="lblADADBlFile1_description" Grid.Row="1" Grid.Column="2"/>
+
+        <Label x:Name="lblADADBlFile2" Grid.Row="2" Grid.Column="0"/>
+        <TextBox x:Name="txtADADBlFile2_value" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" IsReadOnly="True">
+            <TextBox.Background>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlLightColorKey}}"/>
+            </TextBox.Background>
+        </TextBox>
+        <Label x:Name="lblADADBlFile2_description" Grid.Row="2" Grid.Column="2"/>
+
+        <Label x:Name="lblADADBlFile3" Grid.Row="3" Grid.Column="0"/>
+        <TextBox x:Name="txtADADBlFile3_value" Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" IsReadOnly="True">
+            <TextBox.Background>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlLightColorKey}}"/>
+            </TextBox.Background>
+        </TextBox>
+        <Label x:Name="lblADADBlFile3_description" Grid.Row="3" Grid.Column="2"/>
+
+
+        <Button x:Name="btnOK" Content="OK" Grid.Row="4" Grid.Column="0" Margin="10,5,10,5" Click="btnOK_Click" MaxWidth="100"/>
+        <Button x:Name="btnCancel" Content="Cancel" Grid.Row="4" Grid.Column="1" Margin="10,5,10,5" Click="btnCancel_Click" MaxWidth="100"/>
+
+    </Grid>
+</Window>
