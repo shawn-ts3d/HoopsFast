@@ -504,6 +504,12 @@ namespace HoopsFast
             AD_EnvCon.ShowDialog();
         }
 
+        private void menuItemADBEMTOptions_Click(object sender, RoutedEventArgs e)
+        {
+            AD.AD_BEMTOptions AD_BEMTOptions = new AD.AD_BEMTOptions();
+            AD_BEMTOptions.ShowDialog();
+        }
+
         private void menuItemFileSave_Click(object sender, RoutedEventArgs e)
         {
             Fast.oneTurbine.fst.WriteFstFile(Fast.oneTurbine.fst);
@@ -710,5 +716,6 @@ namespace HoopsFast
                 GetCanvas().Update();
             }
         }
+
     }
 }

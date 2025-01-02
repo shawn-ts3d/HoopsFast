@@ -7,6 +7,9 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="AD\AD_BEMTOptions.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="AD\AD_EnvCon.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -48,6 +51,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="AD\AD_BEMTOptions.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="AD\AD_EnvCon.xaml">
       <SubType>Designer</SubType>
     </Page>

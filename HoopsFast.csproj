@@ -11,6 +11,7 @@
     <None Remove="hps_wpf_sandbox_config.xml" />
     <None Remove="Images\Animation.png" />
     <None Remove="Images\AssociationRelationship.png" />
+    <None Remove="Images\BEMT.png" />
     <None Remove="Images\DocumentCollection.png" />
     <None Remove="Images\FlagGreen.png" />
     <None Remove="Images\FluidLayout.png" />
@@ -39,6 +40,7 @@
   <ItemGroup>
     <Resource Include="Images\Animation.png" />
     <Resource Include="Images\AssociationRelationship.png" />
+    <Resource Include="Images\BEMT.png" />
     <Resource Include="Images\DocumentCollection.png" />
     <Resource Include="Images\FlagGreen.png" />
     <Resource Include="Images\FluidLayout.png" />
