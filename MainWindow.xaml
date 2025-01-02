@@ -171,12 +171,20 @@
                             <ribbon:RibbonControlSizeDefinition ImageSize="Small" IsLabelVisible="True" />
                             <ribbon:RibbonControlSizeDefinition ImageSize="Small" IsLabelVisible="True" />
                             <ribbon:RibbonControlSizeDefinition ImageSize="Small" IsLabelVisible="True" />
+                            <ribbon:RibbonControlSizeDefinition ImageSize="Small" IsLabelVisible="True" />
+                            <ribbon:RibbonControlSizeDefinition ImageSize="Small" IsLabelVisible="True" />
                         </ribbon:RibbonGroupSizeDefinition>
                     </ribbon:RibbonGroup.GroupSizeDefinitions>
                     <ribbon:RibbonButton x:Name="menuItemADGeneral"  Label="General Options" Click="menuItemADGeneral_Click" SmallImageSource="pack://application:,,,/Images/settings.png" />
                     <ribbon:RibbonButton x:Name="menuItemADEnvCon"  Label="Environmental Conditions" Click="menuItemADEnvCon_Click" SmallImageSource="pack://application:,,,/Images/FluidLayout.png" />
                     <ribbon:RibbonButton x:Name="menuItemADBEMTOptions"  Label="BEMT Options" Click="menuItemADBEMTOptions_Click" SmallImageSource="pack://application:,,,/Images/BEMT.png" />
                     <ribbon:RibbonButton x:Name="menuItemADDynamicBEMTOptions"  Label="Dynamic BEMT Options" Click="menuItemADDynamicBEMTOptions_Click" SmallImageSource="pack://application:,,,/Images/BEMT.png" />
+                    
+                    <!--//TODO: Add logics for this-->
+                    <ribbon:RibbonButton x:Name="menuItemADOLAFOptions"  Label="OLAF Theory Options" Click="menuItemADOLAFOptions_Click" Visibility="Collapsed" /> 
+                    <!--TODO: Add logics for this-->
+                    <ribbon:RibbonButton x:Name="menuItemADUnsteadyAeroOptions"  Label="Unsteady Airfoil Aerodynamics Options" Click="menuItemADUnsteadyAeroOptions_Click" Visibility="Collapsed" /> 
+                    
                 </ribbon:RibbonGroup>
                 <ribbon:RibbonGroup Header="Tower">
                     <ribbon:RibbonGroup.GroupSizeDefinitions>
