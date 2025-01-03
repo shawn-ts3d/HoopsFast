@@ -188,7 +188,7 @@
                     <ribbon:RibbonButton x:Name="menuItemADUnsteadyAeroOptions"  Label="Unsteady Airfoil Aerodynamics Options" Click="menuItemADUnsteadyAeroOptions_Click" Visibility="Collapsed" />
 
                     <ribbon:RibbonButton x:Name="menuItemADAirfoilInfo" Label="Airfoil Information" Click="menuItemADAirfoilInfo_Click" />
-                    <ribbon:RibbonButton x:Name="menuItemADBladeProp" Label="Rotor/Blade Properties" Click="menuItemADBladeProp_Click" />
+                    <ribbon:RibbonButton x:Name="menuItemADProperties" Label="Properties" Click="menuItemADProperties_Click" />
 
                 </ribbon:RibbonGroup>
                 <ribbon:RibbonGroup Header="Tower">

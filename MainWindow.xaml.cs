@@ -532,10 +532,10 @@ namespace HoopsFast
             AD_AirfoilInfo.ShowDialog();
         }
 
-        private void menuItemADBladeProp_Click(object sender, RoutedEventArgs e)
+        private void menuItemADProperties_Click(object sender, RoutedEventArgs e)
         {
-            AD.AD_BladeProp AD_BladeProp = new AD.AD_BladeProp();
-            AD_BladeProp.ShowDialog();
+            AD.AD_Properties AD_Properties = new AD.AD_Properties();
+            AD_Properties.ShowDialog();
         }
 
 

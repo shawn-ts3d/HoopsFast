@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace HoopsFast.AD
 {
     /// <summary>
-    /// Interaction logic for AD_BladeProp.xaml
+    /// Interaction logic for AD_Properties.xaml
     /// </summary>
-    public partial class AD_BladeProp : Window
+    public partial class AD_Properties : Window
     {
-        public AD_BladeProp()
+        public AD_Properties()
         {
             InitializeComponent();
 
@@ -38,8 +38,23 @@ namespace HoopsFast.AD
             lblADADBlFile3.Content = Fast.oneTurbine.AD.ADBlFile3.name;
             txtADADBlFile3_value.Text = Fast.oneTurbine.AD.ADBlFile3.value;
             lblADADBlFile3_description.Content = Fast.oneTurbine.AD.ADBlFile3.description;
-        }
 
+            //hub properties (used only when Buoyancy=True)
+            //
+            //VolHub
+            //HubCenBx
+
+            //Nacelle Properties (used only when Buoyancy=True)
+            //
+            //VolNac
+            //NacCenB
+
+            //Tail fin Aerodynamics
+            //
+            //TFinAero
+            //TFinFile
+
+        }
 
 
         private void btnOK_Click(object sender, RoutedEventArgs e)
