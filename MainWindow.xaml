@@ -108,11 +108,21 @@
                         <ribbon:RibbonGroupSizeDefinition>
                             <ribbon:RibbonControlSizeDefinition ImageSize="Large" IsLabelVisible="True" />
                             <ribbon:RibbonControlSizeDefinition ImageSize="Large" IsLabelVisible="True" />
-                            <ribbon:RibbonControlSizeDefinition ImageSize="Large" IsLabelVisible="True" />
                         </ribbon:RibbonGroupSizeDefinition>
                     </ribbon:RibbonGroup.GroupSizeDefinitions>
 
                     <ribbon:RibbonButton x:Name="menuItemSimRun" Label="Run" Click="menuItemSimRun_Click" LargeImageSource="pack://application:,,,/Images/Run.png" />
+                    <ribbon:RibbonButton x:Name="menuItemSimSolver" Label="Solver" Click="menuItemSimSolver_Click" Visibility="Collapsed" />
+                </ribbon:RibbonGroup>
+
+                <ribbon:RibbonGroup Header="Results">
+                    <ribbon:RibbonGroup.GroupSizeDefinitions>
+                        <ribbon:RibbonGroupSizeDefinition>
+                            <ribbon:RibbonControlSizeDefinition ImageSize="Large" IsLabelVisible="True" />
+                            <ribbon:RibbonControlSizeDefinition ImageSize="Large" IsLabelVisible="True" />
+                        </ribbon:RibbonGroupSizeDefinition>
+                    </ribbon:RibbonGroup.GroupSizeDefinitions>
+
                     <ribbon:RibbonButton x:Name="menuItemSimOpenOutFile"  Label="Open Result File" Click="menuItemSimOpenOutFile_Click" LargeImageSource="pack://application:,,,/Images/ResultsToGrid.png" />
                     <ribbon:RibbonButton x:Name="menuItemSimImportResults"  Label="Import Results" Click="menuItemSimImportResults_Click" LargeImageSource="pack://application:,,,/Images/OpenPerformanceResult.png" />
                 </ribbon:RibbonGroup>

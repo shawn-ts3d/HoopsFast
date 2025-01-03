@@ -594,7 +594,15 @@ namespace HoopsFast
         private void menuItemSimRun_Click(object sender, RoutedEventArgs e)
         {
             ProcessStartInfo startInfo = new ProcessStartInfo();
-            startInfo.FileName = "openfast_x64.exe";
+            if (string.IsNullOrEmpty(Fast.solverPath))
+            {
+                string exePath = AppDomain.CurrentDomain.BaseDirectory;
+                startInfo.FileName = exePath + "openfast_x64.exe";
+            }
+            else
+            {
+                startInfo.FileName = Fast.solverPath;
+            }        
             startInfo.Arguments = Fast.fileName_fst;
 
             try
@@ -610,7 +618,18 @@ namespace HoopsFast
             {
                 // Log error.
             }
+        }
 
+        private void menuItemSimSolver_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog openD = new OpenFileDialog();
+            openD.DefaultExt = ".exe";
+            openD.Filter = "OpenFAST solver |*.exe";
+
+            if (openD.ShowDialog() == true)
+            {
+                Fast.solverPath = openD.FileName;
+            }
         }
 
         private void menuItemSimOpenOutFile_Click(object sender, RoutedEventArgs e)

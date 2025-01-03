@@ -16,6 +16,8 @@ namespace HoopsFast
         public static string fileName_fst { set; get; }
         public static string status { set; get; }
 
+        public static string solverPath { set; get; }
+
         public static IDictionary<string, string> outParameterList { get; set; }
     }
 
