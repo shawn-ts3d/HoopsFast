@@ -737,12 +737,6 @@ namespace HoopsFast
             GetSprocketsControl().Canvas.Update();
         }
 
-        private void menuItemMaterialHD_Click(object sender, RoutedEventArgs e)
-        {
-            PostProcess.MaterialSettings materialSettings = new PostProcess.MaterialSettings(Hoops.HDKey);
-            materialSettings.ShowDialog();
-        }
-
         private void menuItemBackground_Click(object sender, RoutedEventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
@@ -773,5 +767,31 @@ namespace HoopsFast
             GetCanvas().Update();
         }
 
+        private void menuItemApplyMaterial_Checked(object sender, RoutedEventArgs e)
+        {
+            HPS.ImageKit imageKit = new HPS.ImageKit();
+            string file_in = @"..\..\..\..\Images\wood.jpg";
+            HPS.Image.ImportOptionsKit importOptionsKit = new HPS.Image.ImportOptionsKit();
+            importOptionsKit.SetFormat(HPS.Image.Format.Jpeg);
+            imageKit = HPS.Image.File.Import(file_in, importOptionsKit);
+
+            HPS.PortfolioKey pKey = HPS.Database.CreatePortfolio();
+            HPS.ImageDefinition imageDefinition = pKey.DefineImage("my_image", imageKit);
+
+            HPS.TextureOptionsKit textureOptionsKit = new HPS.TextureOptionsKit();
+            textureOptionsKit.SetParameterizationSource(HPS.Material.Texture.Parameterization.UV);
+            pKey.DefineTexture("my_texture", imageDefinition, textureOptionsKit);
+
+            Hoops.HDKey.GetPortfolioControl().Push(pKey);
+            Hoops.HDKey.GetMaterialMappingControl().SetFaceTexture("my_texture");
+
+            GetCanvas().Update();
+        }
+
+        private void menuItemApplyMaterial_Unchecked(object sender, RoutedEventArgs e)
+        {
+            Hoops.HDKey.GetMaterialMappingControl().UnsetFaceMaterial();
+            GetCanvas().Update();
+        }
     }
 }

@@ -107,8 +107,8 @@ namespace HoopsFast
 			{
 				Hoops.CreateHDModel(Fast.oneTurbine);
 				Hoops.HDKey.GetVisibilityControl().SetFaces(true);
-			}
-			else
+            }
+            else
 			{
 				bool visible;
 				Hoops.HDKey.GetVisibilityControl().ShowFaces(out visible);
@@ -140,7 +140,9 @@ namespace HoopsFast
 			{
 				Hoops.CreateADModel(Fast.oneTurbine);
 				Hoops.ADKey.GetVisibilityControl().SetFaces(true);
-			}
+				Hoops.ADKey.GetMaterialMappingControl().SetFaceColor(new HPS.RGBAColor(229, 228, 224, 255));
+                Hoops.ADKey.GetMaterialMappingControl().SetBackFaceGloss(10.0f);
+            }
 			else
 			{
 				bool visible;
@@ -196,7 +198,8 @@ namespace HoopsFast
 			{
 				Hoops.CreateEDModel(Fast.oneTurbine);
 				Hoops.EDKey.GetVisibilityControl().SetFaces(true);
-			}
+				Hoops.EDKey.GetMaterialMappingControl().SetFaceColor(new HPS.RGBAColor(229, 228, 224, 255));
+            }
 			else
 			{
 				bool visible;
@@ -500,7 +503,10 @@ namespace HoopsFast
 
 				// Enable/disable shadow and pass in shadow settings
 				viewSeg.GetVisualEffectsControl().SetSimpleShadowColor(color);
-			}
+
+                viewSeg.GetVisualEffectsControl().SetSimpleShadowLightDirection(new HPS.Vector(1, 1, 1));
+
+            }
 			else
 				ctrl.Canvas.GetFrontView().SetSimpleShadow(false);
 

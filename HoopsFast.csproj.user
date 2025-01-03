@@ -52,9 +52,6 @@
     <Compile Update="PostProcess\FstOutResults.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="PostProcess\MaterialSettings.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Update="PostProcess\Plot.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -106,9 +103,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="PostProcess\FstOutResults.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="PostProcess\MaterialSettings.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="PostProcess\Plot.xaml">

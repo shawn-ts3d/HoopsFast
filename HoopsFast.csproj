@@ -24,6 +24,7 @@
     <None Remove="Images\Settings.png" />
     <None Remove="Images\TS3D-Fav.ico" />
     <None Remove="Images\vtk.png" />
+    <None Remove="Images\wood.jpg" />
     <None Remove="Resources\OutListParameters.xlsx" />
   </ItemGroup>
 
@@ -53,12 +54,12 @@
     <Resource Include="Images\Settings.png" />
     <Resource Include="Images\TS3D-Fav.ico" />
     <Resource Include="Images\vtk.png" />
+    <Resource Include="Images\wood.jpg" />
     <Resource Include="Resources\OutListParameters.xlsx" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="EPPlus" Version="7.1.1" />
-    <PackageReference Include="Extended.Wpf.Toolkit" Version="4.6.1" />
     <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
     <PackageReference Include="Microsoft.Windows.Compatibility" Version="8.0.4" />
     <PackageReference Include="RibbonControlsLibrary" Version="4.0.0" />
