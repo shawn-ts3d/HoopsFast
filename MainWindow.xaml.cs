@@ -746,5 +746,13 @@ namespace HoopsFast
             }
         }
 
+        private void menuItemRemoveBackground_Click(object sender, RoutedEventArgs e)
+        {
+            //There might be a bug. This doesn't seem to work.
+            //Currently this menu item is hidden.
+            GetCanvas().GetWindowKey().GetSubwindowControl().UnsetBackground();
+            GetCanvas().Update();
+        }
+
     }
 }
