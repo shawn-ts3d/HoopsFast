@@ -6,7 +6,6 @@ using System.Text;
 using System.Threading.Tasks;
 
 using FASTInputDll;
-using HPS;
 
 namespace HoopsFast
 {
@@ -18,6 +17,8 @@ namespace HoopsFast
         public static HPS.SegmentKey HDKey { get; set; }
         public static HPS.SegmentKey HDJointsKey { get; set; }
         public static HPS.SegmentKey HDMembersKey { get; set; }
+        public static HPS.RGBAColor HDColor { get; set; }
+
 
         public static HPS.SegmentKey ADKey { get; set; }
         public static HPS.SegmentKey ADTowerKey { get; set; }
@@ -70,6 +71,7 @@ namespace HoopsFast
             if (HDMembersKey == null)
             {
                 CreateHDMembers(oneTurbine);
+                HDColor = new HPS.RGBAColor(0.89f, 0.75f, 0.21f, 1.0f);
             }
             else
             {

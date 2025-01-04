@@ -792,6 +792,7 @@ namespace HoopsFast
         private void menuItemApplyMaterial_Unchecked(object sender, RoutedEventArgs e)
         {
             Hoops.HDKey.GetMaterialMappingControl().UnsetFaceMaterial();
+            Hoops.HDKey.GetMaterialMappingControl().SetFaceColor(Hoops.HDColor);
             GetCanvas().Update();
         }
 

@@ -107,6 +107,7 @@ namespace HoopsFast
 			{
 				Hoops.CreateHDModel(Fast.oneTurbine);
 				Hoops.HDKey.GetVisibilityControl().SetFaces(true);
+                Hoops.HDKey.GetMaterialMappingControl().SetFaceColor(Hoops.HDColor);
             }
             else
 			{
@@ -140,7 +141,7 @@ namespace HoopsFast
 			{
 				Hoops.CreateADModel(Fast.oneTurbine);
 				Hoops.ADKey.GetVisibilityControl().SetFaces(true);
-				Hoops.ADKey.GetMaterialMappingControl().SetFaceColor(new HPS.RGBAColor(229, 228, 224, 255));
+				Hoops.ADKey.GetMaterialMappingControl().SetFaceColor(new HPS.RGBAColor(229, 228, 224, 1.0f));
                 Hoops.ADKey.GetMaterialMappingControl().SetBackFaceGloss(10.0f);
             }
 			else
