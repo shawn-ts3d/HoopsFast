@@ -157,12 +157,12 @@
                     <ribbon:RibbonGroup.GroupSizeDefinitions>
                         <ribbon:RibbonGroupSizeDefinition>
                             <ribbon:RibbonControlSizeDefinition ImageSize="Small" IsLabelVisible="True" />
-                            <ribbon:RibbonControlSizeDefinition ImageSize="Small" IsLabelVisible="True" />
                         </ribbon:RibbonGroupSizeDefinition>
                     </ribbon:RibbonGroup.GroupSizeDefinitions>
                     <ribbon:RibbonButton Command="{Binding VisHD}" x:Name="menuItemVisHD"  Label="Hide/Show HD" />
                     <!--<ribbon:RibbonButton x:Name="menuItemMaterialHD"  Label="Apply Materials" Click="menuItemMaterialHD_Click" />-->
                     <ribbon:RibbonCheckBox x:Name="menuItemApplyMaterial"  Label="Apply Materials" Checked="menuItemApplyMaterial_Checked" Unchecked="menuItemApplyMaterial_Unchecked" />
+                    <ribbon:RibbonCheckBox x:Name="menuItemSeaLevel" Label="Show Sea Level" Checked="menuItemSeaLevel_Checked" Unchecked="menuItemSeaLevel_Unchecked" />
                 </ribbon:RibbonGroup>
             </ribbon:RibbonTab>
 

@@ -769,8 +769,9 @@ namespace HoopsFast
 
         private void menuItemApplyMaterial_Checked(object sender, RoutedEventArgs e)
         {
+            string exePath = AppDomain.CurrentDomain.BaseDirectory;
             HPS.ImageKit imageKit = new HPS.ImageKit();
-            string file_in = @"..\..\..\..\Images\wood.jpg";
+            string file_in = exePath + "Images\\wood.jpg";
             HPS.Image.ImportOptionsKit importOptionsKit = new HPS.Image.ImportOptionsKit();
             importOptionsKit.SetFormat(HPS.Image.Format.Jpeg);
             imageKit = HPS.Image.File.Import(file_in, importOptionsKit);
@@ -792,6 +793,34 @@ namespace HoopsFast
         {
             Hoops.HDKey.GetMaterialMappingControl().UnsetFaceMaterial();
             GetCanvas().Update();
+        }
+
+        private void menuItemSeaLevel_Checked(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                Hoops.SeaLevel.GetVisibilityControl().SetFaces(true);
+                GetCanvas().Update();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+
+        }
+
+        private void menuItemSeaLevel_Unchecked(object sender, RoutedEventArgs e)
+        {
+            try 
+            {
+                Hoops.SeaLevel.GetVisibilityControl().SetFaces(false);
+                GetCanvas().Update();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+
         }
     }
 }

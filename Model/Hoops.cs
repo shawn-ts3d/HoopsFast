@@ -6,12 +6,15 @@ using System.Text;
 using System.Threading.Tasks;
 
 using FASTInputDll;
+using HPS;
 
 namespace HoopsFast
 {
     public static class Hoops
     {
         public static HPS.Model Model { get; set; }
+        public static HPS.SegmentKey SeaLevel { get; set; }
+
         public static HPS.SegmentKey HDKey { get; set; }
         public static HPS.SegmentKey HDJointsKey { get; set; }
         public static HPS.SegmentKey HDMembersKey { get; set; }
@@ -43,7 +46,7 @@ namespace HoopsFast
         public static void CreateNewHoopsModel()
         {
             Model = null;
-            HDKey = HDJointsKey = HDMembersKey = null;
+            HDKey = HDJointsKey = HDMembersKey = SeaLevel = null;
             ADKey = ADTowerKey = ADBladeKey = ADBladeKey2 = ADBladeKey3 = null;
             EDKey = EDRotorKey = null;
             SDKey = SDJointsKey = SDMembersKey = null;
@@ -67,6 +70,15 @@ namespace HoopsFast
             if (HDMembersKey == null)
             {
                 CreateHDMembers(oneTurbine);
+            }
+            else
+            {
+                
+            }
+
+            if (SeaLevel == null)
+            {
+                CreateSeaLevel(oneTurbine);
             }
             else
             {
@@ -137,6 +149,45 @@ namespace HoopsFast
 
                 HDMembersKey.InsertCylinder(cylinderKit);
             }
+        }
+
+        private static void CreateSeaLevel(TurbineData oneTurbine)
+        {
+            SeaLevel = Model.GetSegmentKey().Subsegment();
+            SeaLevel.SetName("HydroDyn Sea Level");
+
+            HPS.Point minPoint = new HPS.Point(0, 0, 0);
+            HPS.Point maxPoint = new HPS.Point(0, 0, 0);
+
+            if (Hoops.HDKey != null)
+            {
+                HPS.BoundingKit bounding_kit = new HPS.BoundingKit();
+                HPS.SimpleSphere sphere = new HPS.SimpleSphere();
+                HPS.SimpleCuboid cuboid = new HPS.SimpleCuboid();
+                HDKey.ShowBounding(out bounding_kit);
+                bounding_kit.ShowVolume(out sphere, out cuboid);
+
+                minPoint = cuboid.min;
+                maxPoint = cuboid.max;
+            }
+
+            HPS.Point[] seaLevelPoints = { 
+                new HPS.Point(minPoint.x-100.0f, minPoint.y-100.0f, 0), 
+                new HPS.Point(minPoint.x-100.0f, maxPoint.y+100.0f, 0), 
+                new HPS.Point(maxPoint.x+100.0f, maxPoint.y+100.0f, 0), 
+                new HPS.Point(maxPoint.x+100.0f, minPoint.y-100.0f, 0)};
+            int[] faces = { 4, 0, 1, 2, 3};
+            SeaLevel.InsertShell(seaLevelPoints, faces);
+
+            //HPS.Point[] waterDepthPoints = {
+            //    new HPS.Point(minPoint.x-100.0f, minPoint.y-100.0f, (float)-oneTurbine.HD.WtrDpth.value),
+            //    new HPS.Point(minPoint.x-100.0f, maxPoint.y+100.0f, (float)-oneTurbine.HD.WtrDpth.value),
+            //    new HPS.Point(maxPoint.x+100.0f, maxPoint.y+100.0f, (float)-oneTurbine.HD.WtrDpth.value),
+            //    new HPS.Point(maxPoint.x+100.0f, minPoint.y-100.0f, (float)-oneTurbine.HD.WtrDpth.value)};
+            //SeaLevel.InsertShell(waterDepthPoints, faces);
+
+            SeaLevel.GetMaterialMappingControl().SetFaceColor(new HPS.RGBAColor(0.24f, 0.48f, 0.56f, 0.5f));
+            SeaLevel.GetVisibilityControl().SetFaces(false);
         }
 
         public static void CreateADModel(TurbineData oneTurbine)
