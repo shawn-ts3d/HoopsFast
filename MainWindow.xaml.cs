@@ -594,6 +594,8 @@ namespace HoopsFast
         private void menuItemSimRun_Click(object sender, RoutedEventArgs e)
         {
             ProcessStartInfo startInfo = new ProcessStartInfo();
+            startInfo.UseShellExecute = false;
+            startInfo.RedirectStandardOutput = true;
             if (string.IsNullOrEmpty(Fast.solverPath))
             {
                 string exePath = AppDomain.CurrentDomain.BaseDirectory;
@@ -611,6 +613,9 @@ namespace HoopsFast
                 // Call WaitForExit and then the using statement will close.
                 using (Process exeProcess = Process.Start(startInfo))
                 {
+                    var logFile = System.IO.Path.GetDirectoryName(Fast.fileName_fst) + "\\" + 
+                    System.IO.Path.GetFileNameWithoutExtension(Fast.fileName_fst) + ".log";
+                    System.IO.File.WriteAllText(logFile, exeProcess.StandardOutput.ReadToEnd());
                     exeProcess.WaitForExit();
                 }
             }
@@ -849,6 +854,23 @@ namespace HoopsFast
             }
         }
 
-
+        private void menuItemSimLog_Click(object sender, RoutedEventArgs e)
+        {
+            var p = new Process();
+            var logFile = System.IO.Path.GetDirectoryName(Fast.fileName_fst) + "\\" +
+                System.IO.Path.GetFileNameWithoutExtension(Fast.fileName_fst) + ".log";
+            if (System.IO.File.Exists(logFile))
+            {
+                p.StartInfo = new ProcessStartInfo(logFile)
+                {
+                    UseShellExecute = true
+                };
+                p.Start();
+            }
+            else
+            {
+                MessageBox.Show("OpenFAST Log file does not exist!");
+            }
+        }
     }
 }

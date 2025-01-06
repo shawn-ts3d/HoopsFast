@@ -113,8 +113,9 @@
                     </ribbon:RibbonGroup.GroupSizeDefinitions>
 
                     <ribbon:RibbonButton x:Name="menuItemSimRun" Label="Run" Click="menuItemSimRun_Click" LargeImageSource="pack://application:,,,/Images/Run.png" />
+                    <ribbon:RibbonButton x:Name="menuItemSimLog" Label="Open Log File" Click="menuItemSimLog_Click" />
                     <ribbon:RibbonButton x:Name="menuItemSimSolver" Label="Solver" Click="menuItemSimSolver_Click" Visibility="Collapsed" />
-                    <ribbon:RibbonButton x:Name="menuItemSimEcho" Label="Open Echo File" Click="menuItemSimEcho_Click" />
+                    <ribbon:RibbonButton x:Name="menuItemSimEcho" Label="Open Echo File" Click="menuItemSimEcho_Click" Visibility="Collapsed"/>
                 </ribbon:RibbonGroup>
 
                 <ribbon:RibbonGroup Header="Results">
