@@ -684,38 +684,46 @@ namespace HoopsFast
                 else
                     exportFromHere = Hoops.Model.GetSegmentKey();
 
-                HPS.IOResult status = HPS.IOResult.Failure;
                 try
                 {
                     HPS.Stream.ExportNotifier notifier = HPS.Stream.File.Export(dlg.FileName, exportFromHere, new HPS.Stream.ExportOptionsKit());
-                    DisplayExportProgress(notifier);   //this needs to be changed!
-                    status = notifier.Status();
+
+                    while (notifier.Status() == HPS.IOResult.InProgress)
+                    {
+                        Mouse.OverrideCursor = System.Windows.Input.Cursors.Wait;
+                        Thread.Sleep(100);                  
+                    }
+
+                    if (notifier.Status() == HPS.IOResult.Success)
+                    {
+                        Mouse.OverrideCursor = null;
+                        MessageBox.Show("Exporting hsf is successful.");
+                    }
                 }
                 catch (HPS.IOException ee)
-                { MessageBox.Show("HPS::Stream::File::Export threw an exception: " + ee.Message); }
-                if (status != HPS.IOResult.Success && status != HPS.IOResult.Canceled)
-                    MessageBox.Show("HPS.Stream.Export encountered an error.");
+                {
+                    Mouse.OverrideCursor = null;
+                    MessageBox.Show("HPS::Stream::File::Export threw an exception: " + ee.Message); 
+                }
             }
         }
 
-        private bool DisplayExportProgress(HPS.IONotifier notifier)
-        {
-            bool success = true;
-            InvokeUIAction(delegate ()
-            {
-                //show the progress dialog
-                GetSprocketsControl().IsEnabled = false;
-                //var dlg = new ProgressBar(_win, notifier, ProgressBar.Operation.Export);
-                //dlg.Owner = _win;
-                //dlg.ShowDialog();
+        //private bool DisplayExportProgress(HPS.IONotifier notifier)
+        //{
+        //    bool success = false;
+        //    InvokeUIAction(delegate ()
+        //    {
+        //        //show the progress dialog
+        //        _win.GetSprocketsControl().IsEnabled = false;
+        //        var dlg = new ProgressBar(_win, notifier, ProgressBar.Operation.Export);
+        //        dlg.Owner = _win;
+        //        dlg.ShowDialog();
 
-                //success = dlg.WasSuccessful();
-                Thread.Sleep(50000);
-
-                GetSprocketsControl().IsEnabled = true;
-            }, true);
-            return success;
-        }
+        //        success = dlg.WasSuccessful();
+        //        _win.GetSprocketsControl().IsEnabled = true;
+        //    }, true);
+        //    return success;
+        //}
 
         private void InvokeUIAction(Action action, bool wait)
         {
