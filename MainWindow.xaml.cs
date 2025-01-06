@@ -823,5 +823,32 @@ namespace HoopsFast
             }
 
         }
+
+        private void menuItemSimEcho_Click(object sender, RoutedEventArgs e)
+        {
+            if (Fast.oneTurbine.fst.Echo.value)
+            {
+                var p = new Process();
+                var echoFile = System.IO.Path.ChangeExtension(Fast.fileName_fst, ".ech");
+                if (System.IO.File.Exists(echoFile))
+                {
+                    p.StartInfo = new ProcessStartInfo(echoFile)
+                    {
+                        UseShellExecute = true
+                    };
+                    p.Start();
+                }
+                else
+                {
+                    MessageBox.Show("OpenFAST echo file " + echoFile + " does not exist!");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Echo is set as False in fst file!");
+            }
+        }
+
+
     }
 }
