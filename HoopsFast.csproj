@@ -2,9 +2,11 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net8.0-windows10.0.26100.0</TargetFramework>
+    <TargetFramework>net8.0-windows</TargetFramework>
     <UseWPF>true</UseWPF>
     <Platforms>AnyCPU;x64</Platforms>
+	<SelfContained>false</SelfContained>
+	<RuntimeIdentifier>win-x64</RuntimeIdentifier>
   </PropertyGroup>
 
   <ItemGroup>
@@ -26,10 +28,6 @@
     <None Remove="Images\vtk.png" />
     <None Remove="Images\wood.jpg" />
     <None Remove="Resources\OutListParameters.xlsx" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Compile Include="..\HOOPS_Visualize_2023_SP2\include\hoops_license.cs" Link="hoops_license.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -57,7 +55,9 @@
     <Content Include="Images\wood.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Resource Include="Resources\OutListParameters.xlsx" />
+	  <Content Include="Resources\OutListParameters.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>
@@ -116,5 +116,9 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
   </ItemGroup>
-
+	
+    <PropertyGroup>
+	    <SatelliteResourceLanguages>en</SatelliteResourceLanguages>
+    </PropertyGroup>
+	
 </Project>

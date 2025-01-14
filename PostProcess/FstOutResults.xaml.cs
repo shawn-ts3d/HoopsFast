@@ -1,6 +1,7 @@
 ﻿using OfficeOpenXml;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Numerics;
@@ -14,6 +15,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using static ScottPlot.Colors;
 
 namespace HoopsFast.PostProcess
 {
@@ -38,9 +40,11 @@ namespace HoopsFast.PostProcess
             {
                 Fast.outParameterList = new Dictionary<string, string>();
                 ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
-                using (ExcelPackage xlPackage = new ExcelPackage(new FileInfo(@"..\..\..\..\Resources\OutListParameters.xlsx")))
+                string exePath = AppDomain.CurrentDomain.BaseDirectory;
+                string file_in = exePath + "Resources\\OutListParameters.xlsx";
+                using (ExcelPackage xlPackage = new ExcelPackage(file_in))
                 {
-                    for (int i = 1; i < xlPackage.Workbook.Worksheets.Count-3; i++)
+                    for (int i = 1; i < xlPackage.Workbook.Worksheets.Count - 3; i++)
                     {
                         var myWorksheet = xlPackage.Workbook.Worksheets[i]; //select sheet here
                         var totalRows = myWorksheet.Dimension.End.Row;
@@ -56,7 +60,7 @@ namespace HoopsFast.PostProcess
                                     {
                                         Fast.outParameterList[myWorksheet.Cells[rowNum, 2].Text.Trim()] = myWorksheet.Cells[rowNum, 4].Text.Trim();
                                     }
-                                        
+
                                     var otherNames = myWorksheet.Cells[rowNum, 3].Text.Trim();
                                     if (otherNames != "")
                                     {

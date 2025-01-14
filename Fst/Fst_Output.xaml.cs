@@ -48,6 +48,8 @@ namespace HoopsFast.Fst
             cboFstOutFileFmt_value.Items.Insert(1, "1: text file [<RootName>.out]");
             cboFstOutFileFmt_value.Items.Insert(2, "2: binary file [<RootName>.outb]");
             cboFstOutFileFmt_value.Items.Insert(3, "3: both 1 and 2");
+            cboFstOutFileFmt_value.Items.Insert(4, "4: uncompressed binary [<RootName>.outb");
+            cboFstOutFileFmt_value.Items.Insert(5, "5: both 1 and 4");
             cboFstOutFileFmt_value.SelectedIndex = Fast.oneTurbine.fst.OutFileFmt.value;
             lblFstOutFileFmt_description.Content = Fast.oneTurbine.fst.OutFileFmt.description;
 

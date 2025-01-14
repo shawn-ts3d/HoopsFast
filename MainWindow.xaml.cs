@@ -201,6 +201,12 @@ namespace HoopsFast
                     menuTabHD.Visibility = Visibility.Visible;
                 }
 
+                //SeaSt
+                if (Fast.oneTurbine.fst.CompSeaSt.value == 1)
+                {
+                    //
+                }
+
                 //Sub-structure
                 if (Fast.oneTurbine.fst.CompSub.value == 1)
                 {

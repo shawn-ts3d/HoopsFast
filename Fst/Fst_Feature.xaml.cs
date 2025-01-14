@@ -50,6 +50,12 @@ namespace HoopsFast.Fst
             cboFstCompServo_value.SelectedIndex = Fast.oneTurbine.fst.CompServo.value;
             lblFstCompServo_description.Content = Fast.oneTurbine.fst.CompServo.description;
 
+            lblFstCompSeaSt.Content = Fast.oneTurbine.fst.CompSeaSt.name;
+            cboFstCompSeaSt_value.Items.Insert(0, "0=None");
+            cboFstCompSeaSt_value.Items.Insert(1, "1=SeaState");
+            cboFstCompSeaSt_value.SelectedIndex = Fast.oneTurbine.fst.CompSeaSt.value;
+            lblFstCompSeaSt_description.Content = Fast.oneTurbine.fst.CompSeaSt.description;
+
             lblFstCompHydro.Content = Fast.oneTurbine.fst.CompHydro.name;
             cboFstCompHydro_value.Items.Insert(0, "0=None");
             cboFstCompHydro_value.Items.Insert(1, "1=HydroDyn");
@@ -113,6 +119,12 @@ namespace HoopsFast.Fst
             {
                 Fast.oneTurbine.fst.CompServo.oldValue = Fast.oneTurbine.fst.CompServo.value;
                 Fast.oneTurbine.fst.CompServo.value = cboFstCompServo_value.SelectedIndex;
+            }
+
+            if (Fast.oneTurbine.fst.CompSeaSt.value != cboFstCompSeaSt_value.SelectedIndex)
+            {
+                Fast.oneTurbine.fst.CompSeaSt.oldValue = Fast.oneTurbine.fst.CompSeaSt.value;
+                Fast.oneTurbine.fst.CompSeaSt.value = cboFstCompSeaSt_value.SelectedIndex;
             }
 
             if (Fast.oneTurbine.fst.CompHydro.value != cboFstCompHydro_value.SelectedIndex)

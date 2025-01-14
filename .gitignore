@@ -22,3 +22,8 @@ obj/x64/Debug/net5.0-windows/ProgressBar/ProgressBar.g.i.cs
 obj/x64/Debug/net5.0-windows/HoopsFast_MarkupCompile.i.lref
 obj/x64/Debug/net5.0-windows/HoopsFast_MarkupCompile.i.lref
 /obj/x64/Debug/net5.0-windows
+/bin
+/obj
+/.gitignore
+/.gitignore
+/hoops_license.cs
