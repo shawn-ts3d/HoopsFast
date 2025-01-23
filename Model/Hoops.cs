@@ -291,20 +291,20 @@ namespace HoopsFast
             }
 
             ADBladeKey.GetModellingMatrixControl().Translate(
-                (float)(oneTurbine.ED.NacCMxn.value * 2.0 + oneTurbine.ED.HubRad.value + CalculateBladeTranslate(oneTurbine)),
+                (float)(Math.Abs(oneTurbine.ED.NacCMxn.value) * 2.0 + oneTurbine.ED.HubRad.value + CalculateBladeTranslate(oneTurbine)),
                 0.0f,
                 (float)(oneTurbine.ED.TowerHt.value + oneTurbine.ED.NacCMzn.value));
 
             vector = new HPS.Vector(1.0f, 0.0f, 0.0f);
             ADBladeKey2.GetModellingMatrixControl().RotateOffAxis(vector, 120.0f);
             ADBladeKey2.GetModellingMatrixControl().Translate(
-               (float)(oneTurbine.ED.NacCMxn.value * 2.0 + oneTurbine.ED.HubRad.value) + CalculateBladeTranslate(oneTurbine), 
+               (float)(Math.Abs(oneTurbine.ED.NacCMxn.value) * 2.0 + oneTurbine.ED.HubRad.value) + CalculateBladeTranslate(oneTurbine), 
                 0.0f,
                 (float)(oneTurbine.ED.TowerHt.value + oneTurbine.ED.NacCMzn.value));
 
             ADBladeKey3.GetModellingMatrixControl().RotateOffAxis(vector, -120.0f);
             ADBladeKey3.GetModellingMatrixControl().Translate(
-               (float)(oneTurbine.ED.NacCMxn.value * 2.0 + oneTurbine.ED.HubRad.value) + CalculateBladeTranslate(oneTurbine),
+               (float)(Math.Abs(oneTurbine.ED.NacCMxn.value) * 2.0 + oneTurbine.ED.HubRad.value) + CalculateBladeTranslate(oneTurbine),
                 0.0f,
                (float)(oneTurbine.ED.TowerHt.value + oneTurbine.ED.NacCMzn.value));
 
@@ -365,7 +365,7 @@ namespace HoopsFast
             HPS.CylinderKit cylinderKit = new HPS.CylinderKit();       
             HPS.Point[] points = new HPS.Point[2];
             points[0] = new HPS.Point(
-                (float)oneTurbine.ED.NacCMxn.value * 2.0f,
+                (float)Math.Abs(oneTurbine.ED.NacCMxn.value) * 2.0f,
                 0.0f,
                 (float)(twrTopNode.Value[0] + oneTurbine.ED.NacCMzn.value));
             points[1] = new HPS.Point(
@@ -384,11 +384,11 @@ namespace HoopsFast
             HPS.CylinderKit cylinderKit2 = new HPS.CylinderKit();
             HPS.Point[] points2 = new HPS.Point[2];
             points2[0] = new HPS.Point(
-                (float)oneTurbine.ED.NacCMxn.value * 2.0f,
+                (float)Math.Abs(oneTurbine.ED.NacCMxn.value) * 2.0f,
                 0.0f,
                 (float)(twrTopNode.Value[0] + oneTurbine.ED.NacCMzn.value));
             points2[1] = new HPS.Point(
-                (float)(oneTurbine.ED.NacCMxn.value * 2.0 + oneTurbine.ED.HubRad.value),
+                (float)(Math.Abs(oneTurbine.ED.NacCMxn.value) * 2.0 + oneTurbine.ED.HubRad.value),
                 0.0f,
                 (float)(twrTopNode.Value[0] + oneTurbine.ED.NacCMzn.value));
             cylinderKit2.SetPoints(points2);
@@ -401,7 +401,7 @@ namespace HoopsFast
 
             HPS.SphereKit sphereKit = new HPS.SphereKit();
             sphereKit.SetCenter(new HPS.Point(
-                (float)(oneTurbine.ED.NacCMxn.value * 2.0 + oneTurbine.ED.HubRad.value * 2.0),
+                (float)(Math.Abs(oneTurbine.ED.NacCMxn.value) * 2.0 + oneTurbine.ED.HubRad.value * 2.0),
                 0.0f,
                 (float)(twrTopNode.Value[0] + oneTurbine.ED.NacCMzn.value)));
             sphereKit.SetRadius((float)oneTurbine.ED.HubRad.value * 2.0f);
