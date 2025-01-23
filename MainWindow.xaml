@@ -96,7 +96,7 @@
                         </ribbon:RibbonGroupSizeDefinition>
                     </ribbon:RibbonGroup.GroupSizeDefinitions>
                     <ribbon:RibbonButton Click="menuItemBackground_Click" x:Name="menuItemVisBackground"  Label="Background" LargeImageSource="pack://application:,,,/Images/PictureAndText.png" />
-                    <ribbon:RibbonButton Click="menuItemRemoveBackground_Click" x:Name="menuItemVisRemoveBackground"  Label="Remove Background" Visibility="Collapsed" />
+                    <ribbon:RibbonButton Click="menuItemRemoveBackground_Click" x:Name="menuItemVisRemoveBackground"  Label="Remove Background" />
                 </ribbon:RibbonGroup>
 
             </ribbon:RibbonTab>
