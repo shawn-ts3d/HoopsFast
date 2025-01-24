@@ -31,13 +31,13 @@ namespace HoopsFast.AD
             txtADDTAero_value.Text = Fast.oneTurbine.AD.DTAero.value.ToString();
             lblADDTAero_description.Content = Fast.oneTurbine.AD.DTAero.description;
 
-            lblADWakeMod.Content = Fast.oneTurbine.AD.WakeMod.name;
+            lblADWakeMod.Content = Fast.oneTurbine.AD.Wake_Mod.name;
             cboADWakeMod_value.Items.Insert(0, "0=none");
             cboADWakeMod_value.Items.Insert(1, "1=BEMT");
             cboADWakeMod_value.Items.Insert(2, "2=DBEMT");
             cboADWakeMod_value.Items.Insert(3, "3=OLAF");
-            cboADWakeMod_value.SelectedIndex = Fast.oneTurbine.AD.WakeMod.value;
-            lblADWakeMod_description.Content = Fast.oneTurbine.AD.WakeMod.description;
+            cboADWakeMod_value.SelectedIndex = Fast.oneTurbine.AD.Wake_Mod.value;
+            lblADWakeMod_description.Content = Fast.oneTurbine.AD.Wake_Mod.description;
 
             lblADAFAeroMod.Content = Fast.oneTurbine.AD.AFAeroMod.name;
             cboADAFAeroMod_value.Items.Insert(0, "1=steady model");
@@ -99,10 +99,10 @@ namespace HoopsFast.AD
                 Fast.oneTurbine.AD.DTAero.value = double.Parse(txtADDTAero_value.Text);
             }
 
-            if (Fast.oneTurbine.AD.WakeMod.value != cboADWakeMod_value.SelectedIndex)
+            if (Fast.oneTurbine.AD.Wake_Mod.value != cboADWakeMod_value.SelectedIndex)
             {
-                Fast.oneTurbine.AD.WakeMod.oldValue = Fast.oneTurbine.AD.WakeMod.value;
-                Fast.oneTurbine.AD.WakeMod.value = cboADWakeMod_value.SelectedIndex;
+                Fast.oneTurbine.AD.Wake_Mod.oldValue = Fast.oneTurbine.AD.Wake_Mod.value;
+                Fast.oneTurbine.AD.Wake_Mod.value = cboADWakeMod_value.SelectedIndex;
             }
 
             if (Fast.oneTurbine.AD.AFAeroMod.value != cboADAFAeroMod_value.SelectedIndex + 1)

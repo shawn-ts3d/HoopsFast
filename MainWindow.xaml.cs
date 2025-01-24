@@ -20,6 +20,7 @@ using Microsoft.Win32;
 using System.Diagnostics;
 using System.Windows.Threading;
 using System.Threading;
+using System.IO;
 
 namespace HoopsFast
 {
@@ -137,6 +138,8 @@ namespace HoopsFast
 
         private void menuItemFileOpen_Click(object sender, RoutedEventArgs e)
         {
+            string status = "";
+            
             OpenFileDialog openD = new OpenFileDialog();
             openD.DefaultExt = ".fst";
             openD.Filter = "FAST Input File (.fst)|*.fst";
@@ -145,19 +148,17 @@ namespace HoopsFast
             {
                 Hoops.CreateNewHoopsModel();
 
-                FstModel fstModel = new FstModel();
                 FstInput fstInput = new FstInput();
-                
 
                 Fast.fileName_fst = openD.FileName;
-                fstModel.filePath = System.IO.Path.GetDirectoryName(openD.FileName);   //may not be needed, check
-                fstModel.ParseFstInputFile(Fast.fileName_fst, Fast.status, ref fstInput);
-
                 Fast.fstInput = fstInput;
-                Fast.fstModel = fstModel;
 
                 Fast.oneTurbine = new TurbineData();
-                Fast.oneTurbine.fst.ParseFstInput(Fast.fileName_fst, Fast.status);
+                if (!Fast.oneTurbine.fst.ParseFstInput(Fast.fileName_fst, ref status))
+                {
+                    MessageBox.Show("Error parsing FST input file: " + "\n" + status);
+                    return;
+                }
 
                 NewVisualize.Execute(this);
 
@@ -166,12 +167,18 @@ namespace HoopsFast
                 menuTabVis.IsSelected = true;
 
                 //fst
+                var filePath = System.IO.Path.GetDirectoryName(Fast.fileName_fst);
                 menuTabFst.Visibility = Visibility.Visible;
 
                 //ED
                 if (Fast.oneTurbine.fst.CompElast.value == 1)
                 {
-                    Fast.oneTurbine.ED.ParseEDInput(fstModel.EDFile, Fast.status, Fast.fstInput);
+                    string EDFile = Static_Methods.GetFileFullPath(filePath, Fast.oneTurbine.fst.EDFile.value);
+                    if (!Fast.oneTurbine.ED.ParseEDInput(EDFile, ref status, Fast.fstInput))
+                    {
+                        MessageBox.Show("Error parsing ElastoDyn input file: " + "\n" + status);
+                        return;
+                    }
                     menuTabED.Visibility = Visibility.Visible;
                 }
 
@@ -184,7 +191,12 @@ namespace HoopsFast
                 //Aero
                 if (Fast.oneTurbine.fst.CompAero.value == 2)
                 {
-                    Fast.oneTurbine.AD.ParseADInput(fstModel.AeroFile, Fast.status, Fast.fstInput);
+                    string AeroFile = Static_Methods.GetFileFullPath(filePath, Fast.oneTurbine.fst.AeroFile.value);
+                    if (!Fast.oneTurbine.AD.ParseADInput(AeroFile, ref status, Fast.fstInput))
+                    {
+                        MessageBox.Show("Error parsing AeroDyn input file: " + "\n" + status);
+                        return;
+                    }
                     menuTabAD.Visibility = Visibility.Visible;
                 }
 
@@ -197,7 +209,12 @@ namespace HoopsFast
                 //Hydro
                 if (Fast.oneTurbine.fst.CompHydro.value == 1)
                 {
-                    Fast.oneTurbine.HD.ParseHDInput(fstModel.HydroFile, Fast.status, Fast.fstInput);
+                    string HydroFile = Static_Methods.GetFileFullPath(filePath, Fast.oneTurbine.fst.HydroFile.value);
+                    if (!Fast.oneTurbine.HD.ParseHDInput(HydroFile, ref status, Fast.fstInput))
+                    {
+                        MessageBox.Show("Error parsing HydroDyn input file: " + "\n" + status);
+                        return;
+                    }
                     menuTabHD.Visibility = Visibility.Visible;
                 }
 
@@ -210,15 +227,17 @@ namespace HoopsFast
                 //Sub-structure
                 if (Fast.oneTurbine.fst.CompSub.value == 1)
                 {
-                    Fast.oneTurbine.SD.ParseSDInput(fstModel.SubFile, Fast.status, Fast.fstInput);
+                    string SubFile = Static_Methods.GetFileFullPath(filePath, Fast.oneTurbine.fst.SubFile.value);
+                    Fast.oneTurbine.SD.ParseSDInput(SubFile, Fast.status, Fast.fstInput);
                     menuTabSD.Visibility = Visibility.Visible;
                 }
 
                 //MoorDyn
                 if (Fast.oneTurbine.fst.CompMooring.value == 3)
                 {
-                    Fast.oneTurbine.MD.ParseMDInput(fstModel.MooringFile, Fast.status, Fast.fstInput);
-                    menuTabMD.Visibility = Visibility.Visible;
+                    string MooringFile = Static_Methods.GetFileFullPath(filePath, Fast.oneTurbine.fst.MooringFile.value);
+                    Fast.oneTurbine.MD.ParseMDInput(MooringFile, Fast.status, Fast.fstInput);
+                    menuTabMD.Visibility = Visibility.Collapsed;  //hide MD for now. Inputs need to be updated.
                 }
                 
                 
@@ -884,6 +903,12 @@ namespace HoopsFast
             {
                 MessageBox.Show("OpenFAST Log file does not exist!");
             }
+        }
+
+        private void menuItemLicense_Click(object sender, RoutedEventArgs e)
+        {
+            //Manually set the expiration date from the license file
+            MessageBox.Show("License expires on: 03/28/2025");
         }
     }
 }

@@ -11,7 +11,6 @@ namespace HoopsFast
     public static class Fast
     {
         public static TurbineData oneTurbine { get; set; }
-        public static FstModel fstModel { set; get; }
         public static FstInput fstInput { set; get; }
         public static string fileName_fst { set; get; }
         public static string status { set; get; }

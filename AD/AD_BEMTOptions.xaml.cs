@@ -23,16 +23,16 @@ namespace HoopsFast.AD
         {
             InitializeComponent();
 
-            lblADSkewMod.Content = Fast.oneTurbine.AD.SkewMod.name;
+            lblADSkewMod.Content = Fast.oneTurbine.AD.Skew_Mod.name;
             cboADSkewMod_value.Items.Insert(0, "1=uncoupled");
             cboADSkewMod_value.Items.Insert(1, "2=Pitt/Peters");
             cboADSkewMod_value.Items.Insert(2, "3=coupled");
-            cboADSkewMod_value.SelectedIndex = Fast.oneTurbine.AD.SkewMod.value - 1;
-            lblADSkewMod_description.Content = Fast.oneTurbine.AD.SkewMod.description;
+            cboADSkewMod_value.SelectedIndex = Fast.oneTurbine.AD.Skew_Mod.value - 1;
+            lblADSkewMod_description.Content = Fast.oneTurbine.AD.Skew_Mod.description;
 
-            lblADSkewModFactor.Content = Fast.oneTurbine.AD.SkewModFactor.name;
-            txtADSkewModFactor_value.Text = Fast.oneTurbine.AD.SkewModFactor.value.ToString();
-            lblADSkewModFactor_description.Content = Fast.oneTurbine.AD.SkewModFactor.description;
+            lblADSkewModFactor.Content = Fast.oneTurbine.AD.SkewRedistrFactor.name;
+            txtADSkewModFactor_value.Text = Fast.oneTurbine.AD.SkewRedistrFactor.value.ToString();
+            lblADSkewModFactor_description.Content = Fast.oneTurbine.AD.SkewRedistrFactor.description;
 
             lblADTipLoss.Content = Fast.oneTurbine.AD.TipLoss.name;
             chkADTipLoss_value.IsChecked = Fast.oneTurbine.AD.TipLoss.value;
@@ -66,16 +66,16 @@ namespace HoopsFast.AD
         private void btnOK_Click(object sender, RoutedEventArgs e)
         {
             //update inputs
-            if (Fast.oneTurbine.AD.SkewMod.value != cboADSkewMod_value.SelectedIndex + 1)
+            if (Fast.oneTurbine.AD.Skew_Mod.value != cboADSkewMod_value.SelectedIndex + 1)
             {
-                Fast.oneTurbine.AD.SkewMod.oldValue = Fast.oneTurbine.AD.SkewMod.value;
-                Fast.oneTurbine.AD.SkewMod.value = cboADSkewMod_value.SelectedIndex + 1;
+                Fast.oneTurbine.AD.Skew_Mod.oldValue = Fast.oneTurbine.AD.Skew_Mod.value;
+                Fast.oneTurbine.AD.Skew_Mod.value = cboADSkewMod_value.SelectedIndex + 1;
             }
 
-            if (Fast.oneTurbine.AD.SkewModFactor.value != double.Parse(txtADSkewModFactor_value.Text))
+            if (Fast.oneTurbine.AD.SkewRedistrFactor.value != double.Parse(txtADSkewModFactor_value.Text))
             {
-                Fast.oneTurbine.AD.SkewModFactor.oldValue = Fast.oneTurbine.AD.SkewModFactor.value;
-                Fast.oneTurbine.AD.SkewModFactor.value = double.Parse(txtADSkewModFactor_value.Text);
+                Fast.oneTurbine.AD.SkewRedistrFactor.oldValue = Fast.oneTurbine.AD.SkewRedistrFactor.value;
+                Fast.oneTurbine.AD.SkewRedistrFactor.value = double.Parse(txtADSkewModFactor_value.Text);
             }
 
             if (Fast.oneTurbine.AD.TipLoss.value != chkADTipLoss_value.IsChecked.Value)
