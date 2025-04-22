@@ -2,8 +2,8 @@
 
 HoopsFast is a visualization and pre-processing tool for OpenFAST wind turbine models. 
 
-HoopsFast is developed using HOOPS SDKs from Tech Soft 3D, WPF and .NET 8.0. It's ready to use on Windows by opening HoopsFast.exe in the package. If you encounter errors when opening HoopsFast.exe, try installing .NET 8 Desktop runtime.
-https://dotnet.microsoft.com/en-us/download/dotnet/8.0
+HoopsFast is developed using HOOPS SDKs from Tech Soft 3D, WPF and .NET 8.0. It's ready to use on Windows by opening HoopsFast.exe in the package. If you encounter errors when opening HoopsFast.exe, try installing .NET 8 Desktop runtime: 
+https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-desktop-8.0.15-windows-x64-installer
 ## To download the app, go to https://www.techsoft3d.com/hoopsfast/
 
 ## WindEurope2025 Poster
